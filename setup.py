@@ -4,19 +4,21 @@
 from setuptools import find_packages, setup
 from os.path import join, dirname
 
+from odoo import release
 
 exec(open(join(dirname(__file__), 'odoo', 'release.py'), 'rb').read())  # Load release variables
 lib_name = 'odoo'
 
+# lo de release lo he anadido yo
 setup(
     name='odoo',
-    version=version,
-    description=description,
-    long_description=long_desc,
-    url=url,
-    author=author,
-    author_email=author_email,
-    classifiers=[c for c in classifiers.split('\n') if c],
+    version=release.version,
+    description=release.description,
+    long_description=release.long_desc,
+    url=release.url,
+    author=release.author,
+    author_email=release.author_email,
+    classifiers=[c for c in release.classifiers.split('\n') if c],
     license=license,
     scripts=['setup/odoo'],
     packages=find_packages(),
