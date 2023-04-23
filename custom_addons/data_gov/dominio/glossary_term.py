@@ -17,8 +17,8 @@ class GlossaryTerm(models.Model):
         (St.PROPUESTO.name, 'Propuesto')
     ], string='Status')
     description = fields.Text('Description')
-    # clase # TODO
-    # owner # TODO
+    # TODO faltan atributos
+    owner = fields.Many2one("datagov.actor", "Owner of this term")
     logical_model = fields.Text('LogicalModel')
     physical_model = fields.Text('PhysicalModel')
     data_type = fields.Selection(selection=[  # lista valor - etiqueta
