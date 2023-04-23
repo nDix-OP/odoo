@@ -3,10 +3,12 @@
 
 {
     "name": "Data Governance",
-    "category": '',
+    "author": "Iván Ortiz del Noval",
+    "category": 'Data',
     "depends": [
         "base"
     ],
+    "description": "Data governance utilities.",
     "data": [
         # rellenar con cosas de archivos y eso
 
