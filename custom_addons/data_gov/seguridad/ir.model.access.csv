@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+data_gov.access_datagov_role,access_datagov_role,data_gov.model_datagov_role,base.group_user,1,1,1,1
+data_gov.access_datagov_category,access_datagov_category,data_gov.model_datagov_category,base.group_user,1,1,1,1
+data_gov.access_datagov_actor,access_datagov_actor,data_gov.model_datagov_actor,base.group_user,1,1,1,1
+data_gov.access_datagov_data_source,access_datagov_data_source,data_gov.model_datagov_data_source,base.group_user,1,1,1,1
+data_gov.access_datagov_glossary_term,access_datagov_glossary_term,data_gov.model_datagov_glossary_term,base.group_user,1,1,1,1
+data_gov.access_datagov_location,access_datagov_location,data_gov.model_datagov_location,base.group_user,1,1,1,1
+data_gov.access_datagov_organization_unit,access_datagov_organization_unit,data_gov.model_datagov_organization_unit,base.group_user,1,1,1,1

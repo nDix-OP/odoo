@@ -4,15 +4,17 @@
 {
     "name": "Data Governance",
     "author": "Iván Ortiz del Noval",
-    "category": 'Data',
+    "category": 'Data/Technical',
     "depends": [
-        "base"
+        "base",
+        "web"
     ],
     "description": "Data governance utilities.",
     "data": [
-        # rellenar con cosas de archivos y eso
+        # rellenar con archivos, los csv o xml, ...
+        "seguridad/ir.model.access.csv"  # permisos del modelo de dominio
 
     ],
     "application": True,
-    "license": "LGPL-3"
+    "license": "LGPL-3",
 }
