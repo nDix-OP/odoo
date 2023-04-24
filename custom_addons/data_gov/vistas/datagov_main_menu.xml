@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Menu de arriba, o en la parte izquierda con las opciones desplegadas -->
+    <!-- el texto de aqui es el que se ve en la interfaz, asi que aqui en español -->
+    <!-- ni idea de que hace sequence -->
+    <menuitem id="datagov_menu_root" name="Gobernanza de datos">
+        <menuitem id="datagov_menu_objetos" name="Entidades" sequence="5">
+            <menuitem id="datagov_menu_actores" action="datagov_vista_actores_action" sequence="5"/>
+            <!-- TODO <menuitem id="datagov_menu_roles" action="datagov_rol_action" sequence="10"/> -->
+        </menuitem>
+    </menuitem>
+</odoo>

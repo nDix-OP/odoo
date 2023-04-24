@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- en verdad, aunque agrupa las acciones para abrir la vista CRUD de actores, puedo juntar todas las acciones en el
+    mismo fichero
+
+     Aqui se pueden hacer tanto formularios como informes con record -->
+<odoo>
+    <!-- accion para cuando abres la ventana con lista de actores -->
+    <!--
+    <record id="datagov_vista_actores_action" model="ir.actions.act_window">
+        <field name="name">Vista de actores</field>
+        <field name="res_model">datagov.actor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_available': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea un nuevo actor.
+            </p>
+            <p>
+                Crea nuevos actores para el modelo de gobernanza de datos.
+            </p>
+        </field>
+    </record>
+    -->
+
+    <!-- menu con la lista en forma de tabla -->
+    <record id="datagov_vista_actores_action" model="ir.actions.act_window">
+        <field name="name">Actores</field>
+        <field name="res_model">datagov.actor</field>
+        <field name="view_mode">tree, form</field>
+        <field name="context">{'search_default_available': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Define un actor para visualizarlo aquí
+            </p>
+            <p>
+                Comience a gestionar su gobernanza de datos añadiendo un actor al modelo.
+            </p>
+        </field>
+    </record>
+</odoo>

@@ -7,5 +7,5 @@ class OrganizationUnit(models.Model):
     _description = "Organization Unit, used for actor"
 
     id = fields.Text("Id", required=True)
-    organizName = fields.Text("Org name")
-    organizDescription = fields.Text("Org description")
+    organizName = fields.Text("Nombre")
+    organizDescription = fields.Text("Descripción")

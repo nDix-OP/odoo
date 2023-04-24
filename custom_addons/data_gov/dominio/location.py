@@ -7,5 +7,5 @@ class Location(models.Model):
     _description = "Location, used for actors"
 
     id = fields.Text("Id", required=True)
-    locationName = fields.Text("Location name")
-    locationAddress = fields.Text("Address")
+    locationName = fields.Text("Nombre")
+    locationAddress = fields.Text("Dirección")

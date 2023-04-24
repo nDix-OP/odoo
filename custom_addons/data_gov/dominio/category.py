@@ -8,8 +8,8 @@ class Category(models.Model):
     _description = "Category type"
 
     id = fields.Text("Id", required=True)
-    name = fields.Text("Name")
-    description = fields.Text("Description")
+    name = fields.Text("Nombre")
+    description = fields.Text("Descripción")
     type = fields.Selection(selection=[  # lista valor - etiqueta
         ("IA", tipo.CategoryType.IA.name),
         ("DGOBJECTIVE", tipo.CategoryType.DGOBJECTIVE.name),
