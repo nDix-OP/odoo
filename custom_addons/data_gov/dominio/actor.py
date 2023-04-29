@@ -7,15 +7,15 @@ class Actor(models.Model):
     _description = 'Data Governance Actor'
 
     id = fields.Text('Id', required=True)
-    name = fields.Text('Nombre')
-    category = fields.Many2one('datagov.category', 'Categoría')  # clase Category
-    description = fields.Text('Descripción')
-    organizationUnit = fields.Many2one('datagov.organization.unit', 'Unidad organizativa')
-    location = fields.Many2one('datagov.location', 'Localización')
+    name = fields.Text('Name', required=True)
+    category = fields.Many2one('datagov.category', 'Category', required=True)  # clase Category
+    description = fields.Text('Description', required=True)
+    organizationUnit = fields.Many2one('datagov.organization.unit', 'Organization Unit', required=True)
+    location = fields.Many2one('datagov.location', 'Location FK', required=True)
     # aunque se use Many2one y de ese tipo, no se crean FK en la BD
-    owner = fields.Many2one('datagov.actor', 'Owner del actor')   # many2one (tabla BD, descripcion)
+    owner = fields.Many2one('datagov.actor', 'Actor owner', required=True)   # many2one (tabla BD, descripcion)
     # Many2many
-    inChargeOf = fields.Many2many(comodel_name='datagov.role', relation='datagov_role_actor', column1='id_actor',
+    performs = fields.Many2many(comodel_name='datagov.role', relation='datagov_role_actor', column1='id_actor',
                                   column2='id_role', string='Roles')
 
     ''' De momento obvio este atributo para no poner mas tablas
