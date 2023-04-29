@@ -35,6 +35,24 @@
         </field>
     </record>
 
+    <!-- menu para la tabla y la búsqueda dentro de la lista en forma de tabla -->
+     <record id="datagov_categorias_vista_buscar" model="ir.ui.view">
+        <field name="name">datagov.categorias.buscar</field>
+        <field name="model">datagov.category</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- aqui va el nombre de los atributos, no el que se muestra por la interfaz -->
+                <field name="name"/>
+                <field name="type"/>
+                <field name="description"/>
+                <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
+                <group expand="1" string="Group By">
+                    <filter string="Tipo" name='type' context="{'group_by':'type'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
     <!-- menu 'principal' con la lista en forma de tabla -->
     <record id="datagov_vista_categorias_action" model="ir.actions.act_window">
         <field name="name">Categorías</field>
