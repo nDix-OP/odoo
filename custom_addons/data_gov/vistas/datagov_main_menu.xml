@@ -13,6 +13,7 @@
         <menuitem id="datagov_menu_catalogos" name="Catálogos" sequence="15">
             <!-- TODO aqui glosario etc -->
             <menuitem id="datagov_menu_actores" action="datagov_vista_actores_action" sequence="5"/>
+            <menuitem id="datagov_menu_categorias" action="datagov_vista_categorias_action" sequence="20"/>
         </menuitem>
     </menuitem>
 </odoo>

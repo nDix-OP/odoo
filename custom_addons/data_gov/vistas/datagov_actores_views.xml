@@ -19,7 +19,7 @@
                 <sheet> <!-- empieza la hoja en si -->
                     <div class="oe_title">
                         <h1>
-                            Nombre: <field name="name"/> <!-- se pone el nombre del atributo en el field -->
+                            <field name="name"/> <!-- se pone el nombre del atributo en el field -->
                         </h1>
                     </div>
                     <group>
@@ -80,7 +80,7 @@
     <record id="datagov_vista_actores_action" model="ir.actions.act_window">
         <field name="name">Actores</field>
         <field name="res_model">datagov.actor</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form</field> <!-- importante sin espacios -->
         <field name="context">{'search_default_available': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">

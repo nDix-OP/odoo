@@ -4,7 +4,6 @@
 
      Aqui se pueden hacer tanto formularios como informes con record -->
 <odoo>
-
     <!-- menu para la tabla y la búsqueda dentro de la lista en forma de tabla -->
      <record id="datagov_roles_vista_buscar" model="ir.ui.view">
         <field name="name">datagov.roles.buscar</field>
