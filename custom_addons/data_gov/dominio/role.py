@@ -11,7 +11,7 @@ class Role(models.Model):  # subclase de esta para persistir automáticamente en
     mainTasks = fields.Text('Tareas principales', required=True)
     profile = fields.Text('Perfil', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
-    skills = fields.Text('Habilidades', required=True)
+    skills = fields.Text('Destrezas', required=True)
     owner = fields.Many2one('datagov.actor', 'Owner', required=True)   # many2one (tabla BD, descripcion)
     # Many2many(otra tabla objeto, nombre tabla relacion, fkcolumna1, fkcolumna2, descripcion)
     performedBy = fields.Many2many(comodel_name='datagov.actor', relation='datagov_role_actor', column1='id_role',

@@ -27,11 +27,12 @@
                         <group>
                             <!-- estas opciones se supone que son para que tenga que elegir una de las existentes -->
                             <field name="category" options="{'no_create': True, 'no_edit': True}"/>
-                            <field name="organizationUnit" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="organizationUnit" options="{'no_create': True, 'no_edit': True}"
+                                widget="organizationUnit.organizName"/>
                         </group>
                         <group>
-                            <field name="location"/>
-                            <field name="owner" widget="selection"/>
+                            <field name="location"/> <!-- ver que hacer para meter las dos ahi-->
+                            <field name="owner"/> <!-- no requerido -->
                         </group>
                     </group>
                     <!-- Aqui empiezan las pestañas -->
@@ -54,8 +55,8 @@
     </record>
 
     <!-- menu para la tabla y la búsqueda dentro de la lista en forma de tabla -->
-     <record id="datagov_actores_vista_buscar" model="ir.ui.view">
-        <field name="name">datagov.actores.buscar</field>
+     <record id="datagov_actores_vista_search" model="ir.ui.view">
+        <field name="name">datagov.actores.search</field>
         <field name="model">datagov.actor</field>
         <field name="arch" type="xml">
             <search>

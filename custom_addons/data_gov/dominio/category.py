@@ -9,7 +9,7 @@ class Category(models.Model):
     _order = "id DESC"
 
     id = fields.Text("Id", required=True)
-    name = fields.Text("Nombre", required=True, unique=True)
+    name = fields.Text("Nombre", required=True)
     description = fields.Text("Descripción", required=True)
     type = fields.Selection(selection=[  # lista valor - etiqueta
         (tipo.CategoryType.IA.name, tipo.CategoryType.IA.value),
