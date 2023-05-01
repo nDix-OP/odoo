@@ -1,5 +1,5 @@
 [options]
-addons_path = /mnt/c/odoo/addons
+addons_path = /mnt/c/odoo/custom_addons, /mnt/c/odoo/addons
 admin_passwd = admin
 csv_internal_sep = ,
 data_dir = /home/ndix/.local/share/Odoo
@@ -64,4 +64,3 @@ websocket_rate_limit_delay = 0.2
 without_demo = False
 workers = 0
 x_sendfile = False
-
