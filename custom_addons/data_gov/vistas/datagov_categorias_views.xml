@@ -35,7 +35,21 @@
         </field>
     </record>
 
-    <!-- menu para la tabla y la búsqueda dentro de la lista en forma de tabla -->
+    <!-- esto es para personalizar la tabla (fijarse en la etiqueta tree) -->
+    <record id="datagov_categorias_vista_tabla" model="ir.ui.view">
+        <field name="name">datagov.categorias.tabla</field>
+        <field name="model">datagov.category</field>
+        <field name="arch" type="xml">
+            <!-- lo de col y colspan es para el ancho de las columnas -->
+            <tree string="Categorías">
+                <field name="name"/>
+                <field name="type"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- estas son las opciones para buscar, filtrar o agrupar -->
      <record id="datagov_categorias_vista_buscar" model="ir.ui.view">
         <field name="name">datagov.categorias.buscar</field>
         <field name="model">datagov.category</field>
@@ -47,7 +61,7 @@
                 <field name="description"/>
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
-                    <filter string="Tipo" name='type' context="{'group_by':'type'}"/>
+                    <filter string="Tipo de categoría" name='type' context="{'group_by':'type'}"/>
                 </group>
             </search>
         </field>

@@ -54,8 +54,26 @@
         </field>
     </record>
 
-    <!-- menu para la tabla y la búsqueda dentro de la lista en forma de tabla -->
-     <record id="datagov_actores_vista_search" model="ir.ui.view">
+    <!-- menu para hacer la tabla -->
+    <record id="datagov_actores_vista_tabla" model="ir.ui.view">
+        <field name="name">datagov.actores.tabla</field>
+        <field name="model">datagov.actor</field>
+        <field name="arch" type="xml">
+            <tree string="Actores">
+                <field name="name"/>
+                <field name="category"/>
+                <field name="organizationUnit"/>
+                <field name="location"/>
+                <field name="owner"/>
+                <!-- poner los roles como etiquetas 1-N -->
+                <field name="performs" widget="many2many_tags"/>
+                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
+            </tree>
+        </field>
+    </record>
+
+    <!-- menu para la búsqueda -->
+     <record id="datagov_actores_vista_buscar" model="ir.ui.view">
         <field name="name">datagov.actores.search</field>
         <field name="model">datagov.actor</field>
         <field name="arch" type="xml">

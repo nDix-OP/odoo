@@ -47,7 +47,25 @@
         </field>
     </record>
 
-    <!-- menu para la tabla y la búsqueda dentro de la lista en forma de tabla -->
+    <!-- menu para hacer la tabla -->
+    <record id="datagov_roles_vista_tabla" model="ir.ui.view">
+        <field name="name">datagov.roles.tabla</field>
+        <field name="model">datagov.role</field>
+        <field name="arch" type="xml">
+            <tree string="Roles">
+                <field name="name"/>
+                <field name="category"/>
+                <field name="mainTasks"/>
+                <field name="profile"/>
+                <field name="owner"/>
+                <!-- poner los roles como etiquetas 1-N -->
+                <field name="performedBy" widget="many2many_tags"/>
+                <field name="skills" optional="hide"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- menu para la búsqueda -->
      <record id="datagov_roles_vista_buscar" model="ir.ui.view">
         <field name="name">datagov.roles.buscar</field>
         <field name="model">datagov.role</field>
