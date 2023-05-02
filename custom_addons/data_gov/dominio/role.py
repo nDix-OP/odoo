@@ -6,7 +6,7 @@ from odoo import fields, models
 
 
 class Role(models.Model):  # subclase de esta para persistir automáticamente en BD
-    id = fields.Text('Id', required=True)
+    id = fields.Id('Id', required=True)
     name = fields.Text('Nombre', required=True)
     mainTasks = fields.Text('Tareas principales', required=True)
     profile = fields.Text('Perfil', required=True)

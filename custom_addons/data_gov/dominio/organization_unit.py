@@ -10,6 +10,6 @@ class OrganizationUnit(models.Model):
     # Por defecto es 'name' y por eso no hay que tocarlo en otros objetos como actor
     _rec_name = 'organizName'
 
-    id = fields.Text("Id", required=True)
+    id = fields.Id("Id", required=True)
     organizName = fields.Text("Nombre")
     organizDescription = fields.Text("Descripción")

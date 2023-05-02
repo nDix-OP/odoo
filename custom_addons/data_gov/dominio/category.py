@@ -8,7 +8,7 @@ class Category(models.Model):
     _description = "Category type"
     _order = "id DESC"
 
-    id = fields.Text("Id", required=True)
+    id = fields.Id("Id", required=True)
     name = fields.Text("Nombre", required=True)
     description = fields.Text("Descripción", required=True)
     type = fields.Selection(selection=[  # lista valor - etiqueta

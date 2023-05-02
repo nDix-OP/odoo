@@ -9,7 +9,7 @@ class Actor(models.Model):
         ('name_unique', 'unique(name)', 'name debe ser único')
     ]
 
-    id = fields.Text('Id', required=True)
+    id = fields.Id('Id', required=True)
     name = fields.Text('Nombre', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
     description = fields.Text('Description', required=True)

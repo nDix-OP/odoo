@@ -8,6 +8,6 @@ class Location(models.Model):
     # para que se busque por nombre en los dropdown
     _rec_name = 'locationName'
 
-    id = fields.Text("Id", required=True)
+    id = fields.Id("Id", required=True)
     locationName = fields.Text("Nombre")
     locationAddress = fields.Text("Dirección")
