@@ -13,14 +13,14 @@ class GlossaryTerm(models.Model):
 
     # atributos mapeados
     id = fields.Id('Id', required=True)  # defecto es falso, id lo crea solo pero esta bien tenerlo tambien aqui
-    name = fields.Text('Nombre')
+    name = fields.Text('Nombre', required=True)
     status = fields.Selection(selection=[  # lista valor - etiqueta
         (St.VIGENTE.name, 'Vigente'),
         (St.RETIRADO.name, 'Retirado'),
         (St.PROPUESTO.name, 'Propuesto')
     ], string='Estatus')
     # TODO faltan atributos
-    owner = fields.Many2one("datagov.actor", "Owner of this term")
+    owner = fields.Many2one("datagov.actor", "Owner of this term", required=True)
     logical_model = fields.Text('Modelo lógico')
     physical_model = fields.Text('Modelo físico')
     data_type = fields.Selection(selection=[  # lista valor - etiqueta

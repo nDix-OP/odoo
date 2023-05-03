@@ -11,9 +11,9 @@ class OrganizationUnit(models.Model):
     _rec_name = 'organizName'
 
     id = fields.Id("Id", required=True)
-    organizName = fields.Text("Nombre")
-    organizDescription = fields.Text("Descripción")
+    organizName = fields.Text("Nombre", required=True)
+    organizDescription = fields.Text("Descripción", required=True)
 
     _sql_constraints = [  # los check o unique
-        ('organizName_unique', 'unique(organizName)', 'El atributo "Nombre" (organizName) debe ser único')
+        ('organizacion_unique', 'unique(organizName)', 'El atributo "Nombre" (organizName) debe ser único')
     ]

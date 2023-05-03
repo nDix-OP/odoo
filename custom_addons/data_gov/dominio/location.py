@@ -13,5 +13,5 @@ class Location(models.Model):
     ]
 
     id = fields.Id("Id", required=True)
-    locationName = fields.Text("Nombre")
-    locationAddress = fields.Text("Dirección")
+    locationName = fields.Text("Nombre", required=True)
+    locationAddress = fields.Text("Dirección", required=True)
