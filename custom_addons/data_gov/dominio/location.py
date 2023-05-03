@@ -8,6 +8,10 @@ class Location(models.Model):
     # para que se busque por nombre en los dropdown
     _rec_name = 'locationName'
 
+    _sql_constraints = [  # los check o unique
+        ('locationName_unique', 'unique(locationName)', 'El atributo "Nombre" (locationName) debe ser único')
+    ]
+
     id = fields.Id("Id", required=True)
     locationName = fields.Text("Nombre")
     locationAddress = fields.Text("Dirección")

@@ -23,6 +23,6 @@ class Role(models.Model):  # subclase de esta para persistir automáticamente en
     _description = 'Rol'
     _order = 'id desc'  # orden del indice por defecto
     _sql_constraints = [  # los check o unique
-        ('name_unique', 'unique(name)', 'name debe ser único')
+        ('name_unique', 'unique(name)', 'El atributo "Nombre" (name) debe ser único')
     ]
     

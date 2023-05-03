@@ -23,6 +23,6 @@ class Category(models.Model):
     ],
         string="Tipo de categoría", required=True)
 
-    _sql_constraints = [
-        ('name_unique', 'unique(name)', 'name debe ser único')
+    _sql_constraints = [  # los check o unique
+        ('name_unique', 'unique(name)', 'El atributo "Nombre" (name) debe ser único')
     ]

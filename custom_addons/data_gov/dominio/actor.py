@@ -5,8 +5,8 @@ class Actor(models.Model):
     # nombre de la tabla de la BD (convierte . a _)
     _name = 'datagov.actor'
     _description = 'Data Governance Actor'
-    _sql_constraints = [
-        ('name_unique', 'unique(name)', 'name debe ser único')
+    _sql_constraints = [  # los check o unique
+        ('name_unique', 'unique(name)', 'El atributo "Nombre" (name) debe ser único')
     ]
 
     id = fields.Id('Id', required=True)
