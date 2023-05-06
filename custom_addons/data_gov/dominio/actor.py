@@ -12,8 +12,8 @@ class Actor(models.Model):
 
     id = fields.Id('Id', required=True)
     name = fields.Text('Nombre', required=True)
-    category = fields.Many2one('datagov.category', 'Categoría', required=True,
-                               domain="[('type', '=', _category_mandatory)]")  # clase Category
+    category = fields.Many2one('datagov.category', 'Categoría', required=True)
+                                #domain="[('type', '=', _category_mandatory)]")  # clase Category
     description = fields.Text('Description', required=True)
     organizationUnit = fields.Many2one('datagov.organization.unit', 'Unidad organizativa', required=True)
     location = fields.Many2one('datagov.location', 'Localización', required=True)
