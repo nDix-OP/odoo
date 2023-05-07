@@ -1,7 +1,7 @@
 """
 Clase de domino de Role, se persiste automáticamente en la BD.
 """
-from custom_addons.data_gov.dominio.category_type import CategoryType
+from .category_type import CategoryType
 from odoo import fields, models, api
 from odoo.exceptions import UserError
 
