@@ -32,7 +32,9 @@
                         </group>
                         <group>
                             <field name="location"/> <!-- ver que hacer para meter las dos ahi-->
-                            <field name="owner"/> <!-- no requerido -->
+                            <field name="owner">
+                                <attribute name="required">False</attribute>
+                            </field><!-- no requerido -->
                         </group>
                     </group>
                     <!-- Aqui empiezan las pestañas -->

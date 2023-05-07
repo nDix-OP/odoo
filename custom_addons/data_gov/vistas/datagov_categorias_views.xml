@@ -25,8 +25,12 @@
                     <group>
                         <!-- aqui estan los que van antes de las pestañas, agrupados en columnas -->
                         <group>
-                            <!-- estas opciones se supone que son para que tenga que elegir una de las existentes -->
-                            <field name="type" options="{'no_create': True, 'no_edit': True}"/>
+                            <!-- estas opciones se supone que son para que tenga que elegir una de las existentes
+                                y la de abajo para que no se pueda editar una vez creada, para ello tiene que estar
+                                el del id (aunque sea invisible)-->
+                            <field name="id" invisible="1"/>
+                            <field name="type"
+                                attrs="{'readonly': [('id', '!=', False)]}"/>
                             <field name="description" options="{'no_create': True, 'no_edit': True}"/>
                         </group>
                     </group>

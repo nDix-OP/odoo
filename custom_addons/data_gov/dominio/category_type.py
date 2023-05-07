@@ -14,3 +14,12 @@ class CategoryType(Enum):
     PROCEDURE = 'Procedimiento'
     DATA_ENTITY = 'Entidad de datos'
     GLOSSARY_TERM = 'Término del glosario'
+
+    # Other ver si se pasa como str o CategoryType, así funciona en ambos casos
+    # Redefinir en cada Enum
+    def __eq__(self, other):
+        if isinstance(other, str):
+            return str(self.name) == str(other)
+        if isinstance(other, CategoryType):
+            return other == CategoryType.ACTOR
+        return False
