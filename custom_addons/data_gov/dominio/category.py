@@ -12,14 +12,19 @@ class Category(models.Model):
     name = fields.Text("Nombre", required=True)
     description = fields.Text("Descripción", required=True)
     type = fields.Selection(selection=[  # lista valor - etiqueta
-        (tipo.CategoryType.IA.name, tipo.CategoryType.IA.value),
-        (tipo.CategoryType.DGOBJECTIVE.name, tipo.CategoryType.DGOBJECTIVE.value),
+        # no veo otra forma que poner uno a uno cada valor
+        (tipo.CategoryType.INPUT_PARAMETER.name, tipo.CategoryType.INPUT_PARAMETER.value),
+        (tipo.CategoryType.ROLE.name, tipo.CategoryType.ROLE.value),
+        (tipo.CategoryType.ACTOR.name, tipo.CategoryType.ACTOR.value),
+        (tipo.CategoryType.SECURITY_CLASSIFICATION.name, tipo.CategoryType.SECURITY_CLASSIFICATION.value),
+        (tipo.CategoryType.DATA_ENTITY.name, tipo.CategoryType.DATA_ENTITY.value),
+        (tipo.CategoryType.DG_OBJECTIVE.name, tipo.CategoryType.DG_OBJECTIVE.value),
+        (tipo.CategoryType.INFORMATION_ASSET.name, tipo.CategoryType.INFORMATION_ASSET.value),
         (tipo.CategoryType.KPI.name, tipo.CategoryType.KPI.value),
         (tipo.CategoryType.POLICY.name, tipo.CategoryType.POLICY.value),
         (tipo.CategoryType.PROCEDURE.name, tipo.CategoryType.PROCEDURE.value),
         (tipo.CategoryType.PRINCIPLE.name, tipo.CategoryType.PRINCIPLE.value),
-        (tipo.CategoryType.QUALITY.name, tipo.CategoryType.QUALITY.value),
-        (tipo.CategoryType.TERM.name, tipo.CategoryType.TERM.value)
+        (tipo.CategoryType.GLOSSARY_TERM.name, tipo.CategoryType.GLOSSARY_TERM.value)
     ],
         string="Tipo de categoría", required=True)
 
