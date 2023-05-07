@@ -1,8 +1,9 @@
 """
 Clase de domino de Role, se persiste automáticamente en la BD.
 """
-
-from odoo import fields, models
+from custom_addons.data_gov.dominio.category_type import CategoryType
+from odoo import fields, models, api
+from odoo.exceptions import UserError
 
 
 class Role(models.Model):  # subclase de esta para persistir automáticamente en BD
@@ -25,4 +26,14 @@ class Role(models.Model):  # subclase de esta para persistir automáticamente en
     _sql_constraints = [  # los check o unique
         ('name_unique', 'unique(name)', 'El atributo "Nombre" (name) debe ser único')
     ]
+
+    # restricción de que la categoría sea de rol
+    @api.onchange('category')
+    def on_change_category(self):
+        # comparar con el __eq__
+        if self.category.type != CategoryType.ROLE:
+            self.category = False  # dejar el valor anterior
+            # lanzar notificación
+            raise UserError("La categoría del rol debe ser una del tipo 'Rol'.")
+        return
     

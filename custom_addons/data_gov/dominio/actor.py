@@ -1,4 +1,8 @@
-from odoo import fields, models
+from importlib.resources import _
+
+from odoo import fields, models, api
+from odoo.exceptions import UserError
+from .category_type import CategoryType
 
 
 class Actor(models.Model):
@@ -16,12 +20,22 @@ class Actor(models.Model):
     organizationUnit = fields.Many2one('datagov.organization.unit', 'Unidad organizativa', required=True)
     location = fields.Many2one('datagov.location', 'Localización', required=True)
     # aunque se use Many2one y de ese tipo, no se crean FK en la BD
-    owner = fields.Many2one('datagov.actor', 'Owner del actor', required=True)   # no requerido para poder añadir uno
+    owner = fields.Many2one('datagov.actor', 'Owner del actor')   # TODO IMPORTANTE: no requerido para poder añadir uno
     # Many2many
     performs = fields.Many2many(comodel_name='datagov.role', relation='datagov_role_actor', column1='id_actor',
                                 column2='id_role', string='Roles')
 
-    ''' De momento obvio este atributo para no poner mas tablas
+    """ De momento obvio este atributo para no poner mas tablas
     # One2many (otra tabla, atributo otra clase y descripcion), poner many2one en la otra clase
     objective = fields.One2many('datagov.dgobjective', 'actor', 'Objetivo de los que es responsable')
-    '''
+    """
+
+    # restricción de que la categoría sea de actor
+    @api.onchange('category')
+    def on_change_category(self):
+        # comparar con el __eq__
+        if self.category.type != CategoryType.ACTOR:
+            self.category = False  # dejar el valor anterior
+            # lanzar notificación
+            raise UserError("La categoría del actor debe ser una del tipo 'Actor'.")
+        return
