@@ -4,6 +4,9 @@
     <!-- el texto de aqui es el que se ve en la interfaz, asi que aqui en español -->
     <!-- ni idea de que hace sequence -->
     <menuitem id="datagov_menu_root" name="Activos de Información">
+        <menuitem id="datagov_menu_principios" name="Principios y alineamiento" sequence="2">
+            <menuitem id="datagov_menu_dgobjectives" action="datagov_vista_dgobjectives_action" sequence="5"/>
+        </menuitem>
         <menuitem id="datagov_menu_activos" name="Gobierno de Activos" sequence="5">
             <menuitem id="datagov_menu_roles" action="datagov_vista_roles_action" sequence="5"/>
         </menuitem>

@@ -1,5 +1,3 @@
-from importlib.resources import _
-
 from odoo import fields, models, api
 from odoo.exceptions import UserError
 from .category_type import CategoryType
@@ -24,17 +22,14 @@ class Actor(models.Model):
     # Many2many
     performs = fields.Many2many(comodel_name='datagov.role', relation='datagov_role_actor', column1='id_actor',
                                 column2='id_role', string='Roles')
-
-    """ De momento obvio este atributo para no poner mas tablas
-    # One2many (otra tabla, atributo otra clase y descripcion), poner many2one en la otra clase
-    objective = fields.One2many('datagov.dgobjective', 'actor', 'Objetivo de los que es responsable')
-    """
+    # One2many (otra tabla, atributo otra clase y description), poner many2one en la otra clase
+    objective = fields.One2many('datagov.dg.objective', 'actor', string='Objetivos como responsable')
 
     # restricción de que la categoría sea de actor
     @api.onchange('category')
     def on_change_category(self):
-        # comparar con el __eq__
-        if self.category.type != CategoryType.ACTOR:
+        # comparar con el __eq__, si se pone vacío no salta pero después no deja guardar
+        if self.category.type != CategoryType.ACTOR and self.category.name is not False:
             self.category = False  # dejar el valor anterior
             # lanzar notificación
             raise UserError("La categoría del actor debe ser una del tipo 'Actor'.")
