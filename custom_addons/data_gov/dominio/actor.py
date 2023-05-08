@@ -16,7 +16,7 @@ class Actor(models.Model):
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
     description = fields.Text('Description', required=True)
     organizationUnit = fields.Many2one('datagov.organization.unit', 'Unidad organizativa', required=True)
-    location = fields.Many2one('datagov.location', 'Localización', required=True)
+    location = fields.Many2one('datagov.location', 'Ubicación', required=True)
     # aunque se use Many2one y de ese tipo, no se crean FK en la BD
     owner = fields.Many2one('datagov.actor', 'Owner del actor')   # IMPORTANTE: no requerido para poder añadir uno
     # Many2many
