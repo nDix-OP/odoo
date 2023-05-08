@@ -49,6 +49,6 @@ class DataSource(models.Model):
 
     # como onChange pero solo se ejecuta al guardar, es para campos calculados
     # al cambiar el status, la fecha de modificación es la actual
-    @api.depends("status")
+    @api.onchange("status")
     def _compute_status_date(self):
         self.statusDate = fields.Datetime.now()
