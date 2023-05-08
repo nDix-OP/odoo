@@ -47,7 +47,7 @@
                             </group>
                         </page>
                         <page string="Roles">
-                            <!-- hacer una tabla con los roles del actor TODO-->
+                            <!-- hacer una tabla con los roles del actor -->
                             <field name="performs"/> <!-- estudiar si es util poner algun attrs-->
                         </page>
                     </notebook>

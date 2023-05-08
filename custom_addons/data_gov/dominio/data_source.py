@@ -18,7 +18,7 @@ class DataSource(models.Model):
     id = fields.Id('Id', required=True)
     name = fields.Text('Name', required=True)
     steward = fields.Many2one('datagov.actor', 'Steward', required=True)
-    description = fields.Text('Description', required=True)
+    description = fields.Text('Descripción', required=True)
     clase = fields.Selection(selection=[  # lista valor - etiqueta
         # no veo otra forma que poner uno a uno cada valor
         # hay que meter el nombre, no deja poniendo el objeto entero
@@ -28,25 +28,22 @@ class DataSource(models.Model):
         (DataSourceClass.SISTEMA_TRANSFERENCIA_FICHEROS.name, DataSourceClass.SISTEMA_TRANSFERENCIA_FICHEROS.value),
         (DataSourceClass.API.name, DataSourceClass.API.value),
     ],
-        string="Clase", required=True)  # TODO poner en vista que no se pueda cambiar luego
+        string="Clase", required=True)  # en la vista no se puede modificar después
     owner = fields.Many2one('datagov.actor', 'Owner', required=True)
-    logical_model = fields.Text('Modelo lógico')
-    physical_model = fields.Text('Modelo físico')
+    logical_model = fields.Text('Modelo lógico', required=True)
+    physical_model = fields.Text('Modelo físico', required=True)
     data_type = fields.Selection(selection=[  # lista valor - etiqueta
         (DataType.ESTRUCTURADOS.name, DataType.ESTRUCTURADOS.value),
         (DataType.SEMIESTRUCTURADOS.name, DataType.SEMIESTRUCTURADOS.value),
         (DataType.NO_ESTRUCTURADOS.name, DataType.NO_ESTRUCTURADOS.value),
     ],
-        string="Tipo de dato", required=True)  # TODO poner en vista que no se pueda cambiar luego
-    status = fields.Many2one('datagov.actor', 'Owner', required=True)
-    logical_model = fields.Text('Modelo lógico')
-    physical_model = fields.Text('Modelo físico')
-    data_type = fields.Selection(selection=[  # lista valor - etiqueta
-        (Status.PROPUESTO.name, Status.PROPUESTO.value),
+        string="Tipo de datos", required=True)  # en la vista no se puede modificar después
+    status = fields.Selection(selection=[  # lista valor - etiqueta
         (Status.VIGENTE.name, Status.VIGENTE.value),
+        (Status.PROPUESTO.name, Status.PROPUESTO.value),
         (Status.RETIRADO.name, Status.RETIRADO.value),
     ],
-        string="Estatus", required=True)  # TODO poner en vista que no se pueda cambiar luego
+        string="Estatus", required=True)
     statusDate = fields.Datetime('Fecha de estatus', required=True,
                                  default=datetime.datetime.now())  # se tiene que cambiar en onChange de status
 
