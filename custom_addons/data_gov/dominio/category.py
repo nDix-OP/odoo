@@ -13,6 +13,7 @@ class Category(models.Model):
     description = fields.Text("Descripción", required=True)
     type = fields.Selection(selection=[  # lista valor - etiqueta
         # no veo otra forma que poner uno a uno cada valor
+        # hay que meter el nombre, no deja poniendo el objeto entero
         (tipo.CategoryType.INPUT_PARAMETER.name, tipo.CategoryType.INPUT_PARAMETER.value),
         (tipo.CategoryType.ROLE.name, tipo.CategoryType.ROLE.value),
         (tipo.CategoryType.ACTOR.name, tipo.CategoryType.ACTOR.value),

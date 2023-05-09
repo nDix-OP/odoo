@@ -21,5 +21,5 @@ class CategoryType(Enum):
         if isinstance(other, str):
             return str(self.name) == str(other)
         if isinstance(other, CategoryType):
-            return other == CategoryType.ACTOR
+            return other == self
         return False

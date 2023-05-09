@@ -6,3 +6,4 @@ data_gov.access_datagov_data_source,access_datagov_data_source,data_gov.model_da
 data_gov.access_datagov_glossary_term,access_datagov_glossary_term,data_gov.model_datagov_glossary_term,base.group_user,1,1,1,1
 data_gov.access_datagov_location,access_datagov_location,data_gov.model_datagov_location,base.group_user,1,1,1,1
 data_gov.access_datagov_organization_unit,access_datagov_organization_unit,data_gov.model_datagov_organization_unit,base.group_user,1,1,1,1
+data_gov.access_datagov_dg_objective,access_datagov_dg_objective,data_gov.model_datagov_dg_objective,base.group_user,1,1,1,1
