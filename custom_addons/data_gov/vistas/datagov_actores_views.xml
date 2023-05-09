@@ -93,8 +93,9 @@
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
                     <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
+                    <filter string="Departamento" name='organizationUnit' context="{'group_by':'organizationUnit'}"/>
                     <filter string="Rol" name='performs' context="{'group_by':'performs'}"/>
-                    <filter string="Owner" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="Ubicación" name='location' context="{'group_by':'location'}"/>
                 </group>
             </search>
         </field>
