@@ -17,7 +17,7 @@ class DataSource(models.Model):
     # atributos mapeados
     id = fields.Id('Id', required=True)
     name = fields.Text('Name', required=True)
-    steward = fields.Many2one('datagov.actor', 'Steward', required=True)
+    steward = fields.Many2one('datagov.actor', 'Administrador', required=True)
     description = fields.Text('Descripción', required=True)
     clase = fields.Selection(selection=[  # lista valor - etiqueta
         # no veo otra forma que poner uno a uno cada valor
@@ -29,7 +29,7 @@ class DataSource(models.Model):
         (DataSourceClass.API.name, DataSourceClass.API.value),
     ],
         string="Clase", required=True)  # en la vista no se puede modificar después
-    owner = fields.Many2one('datagov.actor', 'Owner', required=True)
+    owner = fields.Many2one('datagov.actor', 'Propietario', required=True)
     logical_model = fields.Text('Modelo lógico', required=True)
     physical_model = fields.Text('Modelo físico', required=True)
     data_type = fields.Selection(selection=[  # lista valor - etiqueta
@@ -43,8 +43,8 @@ class DataSource(models.Model):
         (Status.PROPUESTO.name, Status.PROPUESTO.value),
         (Status.RETIRADO.name, Status.RETIRADO.value),
     ],
-        string="Estatus", required=True)
-    statusDate = fields.Datetime('Fecha de estatus', required=True,
+        string="Estado", required=True)
+    statusDate = fields.Datetime('Fecha de estado', required=True,
                                  default=datetime.datetime.now())  # se tiene que cambiar en onChange de status
 
     # al cambiar el status, la fecha de modificación es la actual

@@ -11,11 +11,11 @@ from odoo.exceptions import UserError
 class DgObjective(models.Model):  # subclase de esta para persistir automáticamente en BD
     id = fields.Id('Id', required=True)
     name = fields.Text('Nombre', required=True)
-    date = fields.Datetime('Fecha', required=True, default=datetime.datetime.now())
+    date = fields.Date('Fecha', required=True, default=datetime.date.today())
     description = fields.Text('Descripción', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
-    owner = fields.Many2one('datagov.actor', 'Owner', required=True)  # many2one (tabla BD, descripcion)
-    actor = fields.Many2one('datagov.actor', 'Actor responsable', required=True)
+    owner = fields.Many2one('datagov.actor', 'Propietario', required=True)  # many2one (tabla BD, descripción)
+    actor = fields.Many2one('datagov.actor', 'Responsable', required=True)
 
     # TODO el campo metric, una vez se haga la clase KPI
 
