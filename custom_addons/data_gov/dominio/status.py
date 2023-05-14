@@ -2,9 +2,9 @@ from enum import Enum
 
 
 class Status(Enum):
-    PROPUESTO = 'Propuesto'
-    VIGENTE = 'Vigente'
-    RETIRADO = 'Retirado'
+    PROPOSED = 'Propuesto'
+    CURRENT = 'Vigente'
+    NOT_IN_FORCE = 'Retirado'
 
     # Other ver si se pasa como str o CategoryType, así funciona en ambos casos
     # Redefinir en cada Enum

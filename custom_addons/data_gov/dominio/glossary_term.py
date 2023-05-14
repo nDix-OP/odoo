@@ -15,16 +15,16 @@ class GlossaryTerm(models.Model):
     id = fields.Id('Id', required=True)  # defecto es falso, id lo crea solo pero esta bien tenerlo tambien aqui
     name = fields.Text('Nombre')
     status = fields.Selection(selection=[  # lista valor - etiqueta
-        (St.VIGENTE.name, 'Vigente'),
-        (St.RETIRADO.name, 'Retirado'),
-        (St.PROPUESTO.name, 'Propuesto')
+        (St.CURRENT.name, 'Vigente'),
+        (St.NOT_IN_FORCE.name, 'Retirado'),
+        (St.PROPOSED.name, 'Propuesto')
     ], string='Estatus')
     # TODO faltan atributos
     owner = fields.Many2one("datagov.actor", "Owner of this term")
     logical_model = fields.Text('Modelo lógico')
     physical_model = fields.Text('Modelo físico')
     data_type = fields.Selection(selection=[  # lista valor - etiqueta
-        (Dt.ESTRUCTURADOS.name, 'Estructurados'),
-        (Dt.SEMIESTRUCTURADOS.name, 'Semiestructurados'),
-        (Dt.NO_ESTRUCTURADOS.name, 'No estructurados')
+        (Dt.STRUCTURED.name, 'Estructurados'),
+        (Dt.SEMISTRUCTURED.name, 'Semiestructurados'),
+        (Dt.UNSTRUCTURED.name, 'No estructurados')
     ], string='Tipo de dato')

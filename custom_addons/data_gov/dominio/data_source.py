@@ -3,7 +3,7 @@ import datetime
 from odoo import fields, models, api
 from .data_source_class import DataSourceClass
 from .data_type import DataType
-from .status import Status
+from .data_source_status import DataSourceStatus
 
 
 class DataSource(models.Model):
@@ -33,21 +33,21 @@ class DataSource(models.Model):
     logical_model = fields.Text('Modelo lógico', required=True)
     physical_model = fields.Text('Modelo físico', required=True)
     data_type = fields.Selection(selection=[  # lista valor - etiqueta
-        (DataType.ESTRUCTURADOS.name, DataType.ESTRUCTURADOS.value),
-        (DataType.SEMIESTRUCTURADOS.name, DataType.SEMIESTRUCTURADOS.value),
-        (DataType.NO_ESTRUCTURADOS.name, DataType.NO_ESTRUCTURADOS.value),
+        (DataType.STRUCTURED.name, DataType.STRUCTURED.value),
+        (DataType.SEMISTRUCTURED.name, DataType.SEMISTRUCTURED.value),
+        (DataType.UNSTRUCTURED.name, DataType.UNSTRUCTURED.value),
     ],
         string="Tipo de datos", required=True)  # en la vista no se puede modificar después
     status = fields.Selection(selection=[  # lista valor - etiqueta
-        (Status.VIGENTE.name, Status.VIGENTE.value),
-        (Status.PROPUESTO.name, Status.PROPUESTO.value),
-        (Status.RETIRADO.name, Status.RETIRADO.value),
+        (DataSourceStatus.ACTIVE.name, DataSourceStatus.ACTIVE.value),
+        (DataSourceStatus.PAUSED.name, DataSourceStatus.PAUSED.value),
+        (DataSourceStatus.INACTIVE.name, DataSourceStatus.INACTIVE.value),
     ],
         string="Estado", required=True)
-    statusDate = fields.Datetime('Fecha de estado', required=True,
-                                 default=datetime.datetime.now())  # se tiene que cambiar en onChange de status
+    statusDate = fields.Date('Fecha de estado', required=True,
+                             default=datetime.date.today())  # se tiene que cambiar en onChange de status
 
     # al cambiar el status, la fecha de modificación es la actual
     @api.onchange("status")
     def _onchange_status_date(self):
-        self.statusDate = fields.Datetime.now()
+        self.statusDate = fields.Date.today()
