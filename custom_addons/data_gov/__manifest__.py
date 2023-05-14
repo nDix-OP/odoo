@@ -20,6 +20,7 @@
         "vistas/datagov_dgobjectives_views.xml",
         "vistas/datagov_ubicaciones_views.xml",
         "vistas/datagov_unidades_org_views.xml",
+        "vistas/datagov_terminos_glosario_views.xml",
         "vistas/datagov_main_menu.xml",  # IMPORTANTE: ponerlo al final porque usa cosas de los otros xml de vistas
     ],
     "application": True,

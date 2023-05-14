@@ -79,8 +79,8 @@
                 <!-- para que en el botón de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
                     <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
-                    <filter string="Actor responsable" name='actor' context="{'group_by':'actor'}"/>
-                    <filter string="Owner" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="Responsable" name='actor' context="{'group_by':'actor'}"/>
+                    <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
                 </group>
             </search>
         </field>

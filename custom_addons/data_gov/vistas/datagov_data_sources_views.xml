@@ -89,10 +89,10 @@
                 <field name="statusDate"/>
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
-                    <filter string="Steward" name='steward' context="{'group_by':'steward'}"/>
+                    <filter string="Administrador" name='steward' context="{'group_by':'steward'}"/>
                     <filter string="Clase" name='clase' context="{'group_by':'clase'}"/>
-                    <filter string="Owner" name='owner' context="{'group_by':'owner'}"/>
-                    <filter string="Estatus" name='status' context="{'group_by':'status'}"/>
+                    <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="Estado" name='status' context="{'group_by':'status'}"/>
                     <filter string="Tipo de dato" name='data_type' context="{'group_by':'data_type'}"/>
                 </group>
             </search>
