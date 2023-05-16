@@ -22,7 +22,7 @@ class GlossaryTerm(models.Model):
         (St.CURRENT.name, 'Vigente'),
         (St.NOT_IN_FORCE.name, 'Retirado'),
         (St.PROPOSED.name, 'Propuesto')
-    ], string='Estatus', required=True)
+    ], string='Estado', required=True)
     statusDate = fields.Date('Fecha de estado', required=True,
                              default=datetime.date.today())  # se tiene que cambiar en onChange de status
     acronym = fields.Text('Acrónimo', required=True)
