@@ -43,10 +43,10 @@
         <field name="context">{'search_default_available': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Define un departamento para visualizarlo aquí
+                Defina un departamento para visualizarlo aquí
             </p>
             <p>
-                Gestione mejor sus grupos de actores añadiendo un departamento al modelo.
+                Gestiona mejor tus grupos de actores añadiendo un departamento al modelo.
             </p>
         </field>
     </record>

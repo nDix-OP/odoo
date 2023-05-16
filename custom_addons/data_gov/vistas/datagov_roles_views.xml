@@ -38,7 +38,6 @@
                     <!-- Aqui empiezan las pestañas -->
                     <notebook>
                         <page string="Actores con el rol">
-                            <!-- hacer una tabla con los actores, solo pone el nombre TODO-->
                             <field name="performedBy"/>
                         </page>
                     </notebook>
@@ -81,7 +80,7 @@
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
                     <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
-                    <filter string="Owner" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
                 </group>
             </search>
         </field>
@@ -95,7 +94,7 @@
         <field name="context">{'search_default_available': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Define un rol para visualizarlo aquí
+                Defina un rol para visualizarlo aquí
             </p>
             <p>
                 Comience a gestionar su gobernanza de datos añadiendo un rol al modelo.

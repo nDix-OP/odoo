@@ -9,6 +9,7 @@
         </menuitem>
         <menuitem id="datagov_menu_activos" name="Gobierno de Activos" sequence="5">
             <menuitem id="datagov_menu_roles" action="datagov_vista_roles_action" sequence="5"/>
+            <menuitem id="datagov_menu_procedimientos" action="datagov_vista_procedimientos_action" sequence="15"/>
         </menuitem>
         <menuitem id="datagov_menu_organizacion" name="Organización" sequence="10">
             <menuitem id="datagov_menu_actores" action="datagov_vista_actores_action" sequence="5"/>
@@ -16,6 +17,7 @@
             <menuitem id="datagov_menu_ubicaciones" action="datagov_vista_ubicaciones_action" sequence="20"/>
         </menuitem>
         <menuitem id="datagov_menu_catalogos" name="Catálogos" sequence="15">
+            <menuitem id="datagov_menu_glosario_terminos" action="datagov_vista_terminos_glosario_action" sequence="10"/>
             <menuitem id="datagov_menu_categorias" action="datagov_vista_categorias_action" sequence="20"/>
             <menuitem id="datagov_menu_data_sources" action="datagov_vista_data_sources_action" sequence="25"/>
         </menuitem>
