@@ -3,7 +3,6 @@ import datetime
 from odoo import fields, models, api
 from odoo.exceptions import UserError
 from .category_type import CategoryType
-from .data_type import DataType as Dt
 from .status import Status as St
 
 

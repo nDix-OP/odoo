@@ -8,3 +8,4 @@ data_gov.access_datagov_location,access_datagov_location,data_gov.model_datagov_
 data_gov.access_datagov_organization_unit,access_datagov_organization_unit,data_gov.model_datagov_organization_unit,base.group_user,1,1,1,1
 data_gov.access_datagov_dg_objective,access_datagov_dg_objective,data_gov.model_datagov_dg_objective,base.group_user,1,1,1,1
 data_gov.access_datagov_procedure,access_datagov_procedure,data_gov.model_datagov_procedure,base.group_user,1,1,1,1
+data_gov.access_datagov_principle,access_datagov_principle,data_gov.model_datagov_principle,base.group_user,1,1,1,1
