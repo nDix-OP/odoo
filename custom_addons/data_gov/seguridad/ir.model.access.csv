@@ -11,3 +11,4 @@ data_gov.access_datagov_procedure,access_datagov_procedure,data_gov.model_datago
 data_gov.access_datagov_principle,access_datagov_principle,data_gov.model_datagov_principle,base.group_user,1,1,1,1
 data_gov.access_datagov_data_quality_rule,access_datagov_data_quality_rule,data_gov.model_datagov_data_quality_rule,base.group_user,1,1,1,1
 data_gov.access_datagov_standard,access_datagov_standard,data_gov.model_datagov_standard,base.group_user,1,1,1,1
+data_gov.access_datagov_input_parameter,access_datagov_input_parameter,data_gov.model_datagov_input_parameter,base.group_user,1,1,1,1

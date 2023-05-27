@@ -26,5 +26,8 @@
         <menuitem id="datagov_menu_gestion_activos" name="Gestión de los AI" sequence="20">
             <menuitem id="datagov_menu_reglas_calidad" action="datagov_vista_reglas_calidad_action" sequence="20"/>
         </menuitem>
+        <menuitem id="datagov_menu_supervision" name="Supervisión" sequence="25">
+            <menuitem id="datagov_menu_parametros" action="datagov_vista_parametros_action" sequence="20"/>
+        </menuitem>
     </menuitem>
 </odoo>
