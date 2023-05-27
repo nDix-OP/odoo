@@ -20,6 +20,7 @@
         <menuitem id="datagov_menu_catalogos" name="Catálogos" sequence="15">
             <menuitem id="datagov_menu_glosario_terminos" action="datagov_vista_terminos_glosario_action" sequence="10"/>
             <menuitem id="datagov_menu_categorias" action="datagov_vista_categorias_action" sequence="20"/>
+            <menuitem id="datagov_menu_entidades_datos" action="datagov_vista_entidades_datos_action" sequence="22"/>
             <menuitem id="datagov_menu_data_sources" action="datagov_vista_data_sources_action" sequence="25"/>
         </menuitem>
         <menuitem id="datagov_menu_gestion_activos" name="Gestión de los AI" sequence="20">
