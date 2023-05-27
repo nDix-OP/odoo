@@ -22,5 +22,8 @@
             <menuitem id="datagov_menu_categorias" action="datagov_vista_categorias_action" sequence="20"/>
             <menuitem id="datagov_menu_data_sources" action="datagov_vista_data_sources_action" sequence="25"/>
         </menuitem>
+        <menuitem id="datagov_menu_gestion_activos" name="Gestión de los AI" sequence="20">
+            <menuitem id="datagov_menu_reglas_calidad" action="datagov_vista_reglas_calidad_action" sequence="20"/>
+        </menuitem>
     </menuitem>
 </odoo>
