@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!-- Menu de arriba, o en la parte izquierda con las opciones desplegadas -->
-    <!-- el texto de aqui es el que se ve en la interfaz, asi que aqui en español -->
-    <!-- ni idea de que hace sequence -->
+    <!-- Menú de arriba, o en la parte izquierda con las opciones desplegadas -->
+    <!-- el texto de aquí es el que se ve en la interfaz, asi que aquí en español -->
     <menuitem id="datagov_menu_root" name="Activos de Información">
         <menuitem id="datagov_menu_principios_alineamiento" name="Principios y alineamiento" sequence="2">
             <menuitem id="datagov_menu_principios" action="datagov_vista_principios_action" sequence="3"/>
@@ -25,6 +24,7 @@
         </menuitem>
         <menuitem id="datagov_menu_gestion_activos" name="Gestión de los AI" sequence="20">
             <menuitem id="datagov_menu_reglas_calidad" action="datagov_vista_reglas_calidad_action" sequence="20"/>
+            <menuitem id="datagov_menu_clasificacion_seguridad" action="datagov_vista_clasificacion_seguridad_action" sequence="25"/>
         </menuitem>
         <menuitem id="datagov_menu_supervision" name="Supervisión" sequence="25">
             <menuitem id="datagov_menu_parametros" action="datagov_vista_parametros_action" sequence="20"/>

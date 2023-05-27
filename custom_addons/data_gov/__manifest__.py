@@ -26,6 +26,7 @@
         "vistas/datagov_reglas_calidad_datos_views.xml",
         "vistas/datagov_estandares_views.xml",
         "vistas/datagov_parametros_views.xml",
+        "vistas/datagov_clasificacion_seguridad_views.xml",
         "vistas/datagov_main_menu.xml",  # IMPORTANTE: ponerlo al final porque usa cosas de los otros xml de vistas
     ],
     "application": True,
