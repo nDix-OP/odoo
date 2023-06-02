@@ -14,7 +14,7 @@ class DataEntity(models.Model):
     id = fields.Id('Id', required=True)
     name = fields.Text('Nombre', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
-    description = fields.Text('Description', required=True)
+    description = fields.Text('Descripción', required=True)
     securityClassification = fields.Many2one('datagov.security.classification', 'Clasificación de seguridad',
                                              required=True)
     steward = fields.Many2one('datagov.actor', 'Administrador', required=True)
@@ -29,12 +29,11 @@ class DataEntity(models.Model):
     '''performs = fields.Many2many(comodel_name='datagov.role', relation='datagov_role_actor', column1='id_actor',
                                 column2='id_role', string='Roles')'''
 
-    '''
     # One2many sobre la misma tabla para la agregación TODO ver como evitar recursión
-    # Hay que crear un atributo adicional para la padre, pero esconderlo en las vistas
-    parentEntity = fields.Many2one('datagov.data.entity', string='Entidad padre')  # la padre
-    composedOf = fields.One2many('datagov.data.entity', 'name', string='Compuesta por')  # la compuesta
-    '''
+    # Hay que crear un atributo adicional oculto para la padre, pero esconderlo en las vistas
+    _compone = fields.Many2one('datagov.data.entity', string='Entidad que compone')
+    composedOf = fields.One2many('datagov.data.entity', 'name', string='Compuesta por',
+                                 context={'default__compone': lambda self: self.id})  # context para poder añadir desde la vista
 
     # restricción
     @api.onchange('category')

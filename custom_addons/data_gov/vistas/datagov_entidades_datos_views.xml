@@ -37,20 +37,23 @@
                             <field name="steward" options="{'no_create': True, 'no_edit': True}"/>
                             <field name="isDigital" options="{'no_create': True, 'no_edit': True}"/>
                             <field name="term" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="description"/>
                         </group>
                     </group>
                     <!-- Aquí empiezan las pestañas -->
                     <notebook>
                         <group>
                             <group>
-                                <field name="description"/>
                             </group>
                         </group>
-                        <!--
+                        <!-- antiguo
                         <page string="Compuesta por">
                             <field name="composedOf"/>
                         </page>
                         -->
+                        <page name="composedOf" string="Compuesta por" >
+                            <field name='composedOf'/>
+                        </page>
                         <page string="Reglas de calidad de datos">
                             <field name="dataQualityRule"/>
                         </page>
@@ -75,7 +78,7 @@
                 <field name="lineage"/>
                 <field name="term"/>
                 <!-- TODO data elements y assets -->
-                <!--<field name="composedOf" widget="many2many_tags"/> -->
+                <field name="composedOf" widget="many2many_tags"/>
                 <field name="dataQualityRule" widget="many2many_tags"/>
                 <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
@@ -96,7 +99,7 @@
                 <field name="lineage"/>
                 <field name="term"/>
                 <!-- TODO data elements y assets -->
-                <!--<field name="composedOf"/>-->
+                <field name="composedOf"/>
                 <field name="dataQualityRule"/>
                 <field name="description"/>
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
