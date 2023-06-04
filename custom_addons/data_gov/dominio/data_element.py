@@ -1,4 +1,5 @@
-from odoo import fields, models
+from odoo import fields, models, api
+from odoo.exceptions import UserError
 
 
 class DataElement(models.Model):
@@ -16,8 +17,23 @@ class DataElement(models.Model):
 
     # Atributos de relaciones con otras clases del modelo
     term = fields.Many2one('datagov.glossary.term', 'Término del glosario', ondelete='set null')
-    # TODO para cuando estén todas, es many to many, y probar el set null
-    dataQualityRule = fields.One2many('datagov.data.quality.rule', 'name', string='Reglas de calidad',
-                                      ondelete='set null')
+    dataQualityRule = \
+        fields.Many2many(relation='datagov_data_element_rule', comodel_name='datagov.data.quality.rule',
+                         column1='id_elemento', column2='id_regla', string='Reglas de calidad de datos')
     # Hacer la composición con DataElement
     dataEntity = fields.Many2one('datagov.data.entity', 'Entidad  de datos que compone', required=True)
+
+    @api.onchange('dataQualityRule')
+    def onchange_data_quality_rule(self):
+        lista = self.dataQualityRule.ids
+        for i in lista:
+            # más cómodo si se ejecuta la query conjunta
+            query = "SELECT id_regla, id_elemento FROM datagov_data_element_rule WHERE id_regla = " + str(i) + \
+                    " UNION SELECT id_regla, id_entidad FROM datagov_data_entity_rule WHERE id_regla = " + str(i) + \
+                    " UNION SELECT id_regla, id_activo FROM datagov_information_asset_rule WHERE id_regla = " + str(i)
+            self.env.cr.execute(query)
+            resultado = self.env.cr.fetchall()
+            if len(resultado) > 0:  # no incluye el actual
+                texto = "La regla de calidad de datos ya está asignada a otro activo de información, entidad o " \
+                        "elemento, y solo puede estar asignada a uno."
+                raise UserError(texto)

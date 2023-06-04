@@ -24,13 +24,10 @@ class InformationAsset(models.Model):
     # TODO requirement (pero no se añade desde este lado)
     dataEntities =\
         fields.Many2many(relation='datagov_data_entity_information_asset', comodel_name='datagov.data.entity',
-                         column1='id_data_entity', column2='id_information_asset', string='Elementos de datos')
-    # TODO para cuando se tengan las 3
-    dataQualityRule = fields.One2many('datagov.data.quality.rule', 'name', string='Reglas de calidad')
-
-    # Many2many para information asset TODO
-    '''performs = fields.Many2many(comodel_name='datagov.role', relation='datagov_role_actor', column1='id_actor',
-                                column2='id_role', string='Roles')'''
+                         column1='id_data_entity', column2='id_information_asset', string='Entidades de datos')
+    dataQualityRule =\
+        fields.Many2many(relation='datagov_information_asset_rule', comodel_name='datagov.data.quality.rule',
+                         column1='id_activo', column2='id_regla', string='Reglas de calidad de datos')
 
     # restricción
     @api.onchange('category')
@@ -42,7 +39,27 @@ class InformationAsset(models.Model):
             raise UserError("La categoría del actor debe ser una del tipo 'Activo de información'.")
         return
 
-    @api.depends
-    def check_tiene_entidades(self):
+    @api.constrains('dataEntities')
+    def check_data_entities(self):
         if len(self.dataEntities.ids) == 0:
-            raise UserError("El activo de información debe contener a, al menos, una entidad de datos.")
+            raise UserError("El activo de información debe contener, al menos, una entidad de datos.")
+
+    @api.constrains('dataQualityRule')
+    def check_data_quality_rules(self):
+        if len(self.dataQualityRule.ids) == 0:
+            raise UserError("El activo de información debe tener, al menos, una regla de calidad de datos.")
+
+    @api.onchange('dataQualityRule')
+    def onchange_data_quality_rule(self):
+        lista = self.dataQualityRule.ids
+        for i in lista:
+            # más cómodo si se ejecuta la query conjunta
+            query = "SELECT id_regla, id_elemento FROM datagov_data_element_rule WHERE id_regla = " + str(i) + \
+                    " UNION SELECT id_regla, id_entidad FROM datagov_data_entity_rule WHERE id_regla = " + str(i) + \
+                    " UNION SELECT id_regla, id_activo FROM datagov_information_asset_rule WHERE id_regla = " + str(i)
+            self.env.cr.execute(query)
+            resultado = self.env.cr.fetchall()
+            if len(resultado) > 0:  # no incluye el actual
+                texto = "La regla de calidad de datos ya está asignada a otro activo de información, entidad o " \
+                        "elemento, y solo puede estar asignada a uno."
+                raise UserError(texto)

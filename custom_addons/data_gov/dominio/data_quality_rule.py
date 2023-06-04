@@ -16,8 +16,6 @@ class DataQualityRule(models.Model):
     description = fields.Text('Descripción', required=True)
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)   # many2one (tabla BD, descripción)
 
-# TODO
-    """ TODO CUANDO SE TENGA LO DEMAS
     # los Many2One que hay que poner como many2many para que se puedan escoger desde las otras clases
     # solo uno puede ser no nulo a la vez, y solo un valor
     dataElement = fields.Many2many(relation='datagov_data_element_rule', comodel_name='datagov.data.element',
@@ -28,8 +26,17 @@ class DataQualityRule(models.Model):
         fields.Many2many(relation='datagov_information_asset_rule',comodel_name='datagov.information.asset',
                          column1='id_regla', column2='id_activo', string='Activo de información que la aplica')
 
-    @api.onchange('dataElement', 'dataEntity','informationAsset')
+    # este método se copia en la entidad, activo y elemento para cuando se inserta desde ahí
+    @api.onchange('dataElement', 'dataEntity', 'informationAsset')
     def on_change_many2many(self):
-        if self.dataEntity and self.dataElement:
-            raise UserError("La categoría del actor debe ser una del tipo 'Entidad de datos'.")
-"""
+        # más cómodo si se ejecuta la query conjunta
+        query = "SELECT id_regla, id_elemento FROM datagov_data_element_rule WHERE id_regla = " + self.id + \
+                "UNION SELECT id_regla, id_entidad FROM datagov_data_entity_rule WHERE id_regla = " + self.id + \
+                "UNION SELECT id_regla, id_activo FROM datagov_information_asset_rule WHERE id_regla = " + self.id
+        self.env.cr.execute(query)
+        resultado = self.env.cr.fetchall()
+        print(str(resultado))
+        if len(resultado) > 0: # no incluye al actual
+            texto = "La regla de calidad de datos ya está asignada a otro activo de información, entidad o elemento. " \
+                    "Solo puede estar asignada a uno."
+            raise UserError(texto)

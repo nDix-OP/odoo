@@ -42,10 +42,6 @@
                     </group>
                     <!-- Aquí empiezan las pestañas -->
                     <notebook>
-                        <group>
-                            <group>
-                            </group>
-                        </group>
                         <page name="composedOf" string="Compuesta por" >
                             <field name='composedOf'/>
                         </page>
