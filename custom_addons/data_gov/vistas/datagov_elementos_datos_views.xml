@@ -39,7 +39,7 @@
         <field name="name">datagov.elementos.datos.tabla</field>
         <field name="model">datagov.data.element</field>
         <field name="arch" type="xml">
-            <tree string="Entidades de datos">
+            <tree string="Elementos de datos">
                 <field name="name"/>
                 <field name="dataEntity"/>
                 <field name="term"/>

@@ -24,13 +24,13 @@ class DataEntity(models.Model):
     masterDataSource = fields.Many2one('datagov.data.source', 'Fuente de datos maestra', required=True)
     term = fields.Many2one('datagov.glossary.term', 'Término del glosario', required=True)
     dataElements = fields.One2many('datagov.data.element', 'dataEntity', string='Elementos de datos')
+    informationAssets = \
+        fields.Many2many(relation='datagov_data_entity_information_asset', comodel_name='datagov.information.asset',
+                         column1='id_information_asset', column2='id_data_entity', string='Activos de información')
     # TODO para cuando se tengan las 3
     dataQualityRule = fields.One2many('datagov.data.quality.rule', 'name', string='Reglas de calidad')
 
-    # Many2many para information asset TODO
-    '''performs = fields.Many2many(comodel_name='datagov.role', relation='datagov_role_actor', column1='id_actor',
-                                column2='id_role', string='Roles')'''
-
+    # LA AGREGACIÓN CONSIGO MISMA
     # Tiene que ser Many2Many a los dos lados para poder añadir tal y como queremos
     # Hay que crear un atributo adicional oculto para la padre, pero esconderlo en las vistas, limite de un elemento
     compone = fields.Many2many(relation='datagov_data_entity_aggregation', comodel_name='datagov.data.entity',
