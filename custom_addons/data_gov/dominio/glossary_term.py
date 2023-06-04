@@ -3,7 +3,6 @@ import datetime
 from odoo import fields, models, api
 from odoo.exceptions import UserError
 from .category_type import CategoryType
-from .data_type import DataType as Dt
 from .status import Status as St
 
 
@@ -22,7 +21,7 @@ class GlossaryTerm(models.Model):
         (St.CURRENT.name, 'Vigente'),
         (St.NOT_IN_FORCE.name, 'Retirado'),
         (St.PROPOSED.name, 'Propuesto')
-    ], string='Estatus', required=True)
+    ], string='Estado', required=True)
     statusDate = fields.Date('Fecha de estado', required=True,
                              default=datetime.date.today())  # se tiene que cambiar en onChange de status
     acronym = fields.Text('Acrónimo', required=True)

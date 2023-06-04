@@ -18,7 +18,7 @@ class Procedure(models.Model):  # subclase de esta para persistir automáticamen
         (Status.CURRENT.name, 'Vigente'),
         (Status.NOT_IN_FORCE.name, 'Retirado'),
         (Status.PROPOSED.name, 'Propuesto')
-    ], string='Estatus', required=True)
+    ], string='Estado', required=True)
     statusDate = fields.Date('Fecha de estado', required=True,
                              default=datetime.date.today())  # se tiene que cambiar en onChange de status
     version = fields.Text('Versión', required=True)
