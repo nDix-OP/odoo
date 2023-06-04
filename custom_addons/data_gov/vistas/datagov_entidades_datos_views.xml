@@ -79,6 +79,8 @@
                 <field name="term"/>
                 <!-- TODO data elements y assets -->
                 <field name="composedOf" widget="many2many_tags"/>
+                <field name="compone" invisible="1"/> <!-- que no se vea -->
+                <field name="dataElements" widget="many2many_tags"/>
                 <field name="dataQualityRule" widget="many2many_tags"/>
                 <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
@@ -86,7 +88,7 @@
     </record>
 
     <!-- menu para la búsqueda -->
-     <record id="datagov_actores_vista_buscar" model="ir.ui.view">
+     <record id="datagov_entidades_datos_vista_buscar" model="ir.ui.view">
         <field name="name">datagov.entidades.datos.search</field>
         <field name="model">datagov.data.entity</field>
         <field name="arch" type="xml">
@@ -100,6 +102,8 @@
                 <field name="term"/>
                 <!-- TODO data elements y assets -->
                 <field name="composedOf"/>
+                <field name="dataElements" widget="many2many_tags"/>
+                <field name="compone" invisible="1"/> <!-- que no se vea -->
                 <field name="dataQualityRule"/>
                 <field name="description"/>
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
@@ -109,6 +113,7 @@
                     <filter string="Clasificación de seguridad" name='securityClassification'
                             context="{'group_by':'securityClassification'}"/>
                     <filter string="Es digital" name='isDigital' context="{'group_by':'isDigital'}"/>
+                    <filter string="Forma parte de" name='compone' context="{'group_by':'compone'}"/>
                 </group>
             </search>
         </field>

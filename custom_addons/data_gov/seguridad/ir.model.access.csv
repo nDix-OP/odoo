@@ -14,3 +14,4 @@ data_gov.access_datagov_standard,access_datagov_standard,data_gov.model_datagov_
 data_gov.access_datagov_input_parameter,access_datagov_input_parameter,data_gov.model_datagov_input_parameter,base.group_user,1,1,1,1
 data_gov.access_datagov_security_classification,access_datagov_security_classification,data_gov.model_datagov_security_classification,base.group_user,1,1,1,1
 data_gov.access_datagov_data_entity,access_datagov_data_entity,data_gov.model_datagov_data_entity,base.group_user,1,1,1,1
+data_gov.access_datagov_data_element,access_datagov_data_element,data_gov.model_datagov_data_element,base.group_user,1,1,1,1

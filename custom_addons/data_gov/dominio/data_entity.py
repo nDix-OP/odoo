@@ -23,9 +23,11 @@ class DataEntity(models.Model):
     # Atributos de relaciones con otras clases del modelo
     masterDataSource = fields.Many2one('datagov.data.source', 'Fuente de datos maestra', required=True)
     term = fields.Many2one('datagov.glossary.term', 'Término del glosario', required=True)
+    dataElements = fields.One2many('datagov.data.element', 'dataEntity', string='Elementos de datos')
+    # TODO para cuando se tengan las 3
     dataQualityRule = fields.One2many('datagov.data.quality.rule', 'name', string='Reglas de calidad')
 
-    # Many2many para information asset
+    # Many2many para information asset TODO
     '''performs = fields.Many2many(comodel_name='datagov.role', relation='datagov_role_actor', column1='id_actor',
                                 column2='id_role', string='Roles')'''
 
