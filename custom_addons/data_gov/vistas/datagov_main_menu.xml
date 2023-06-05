@@ -9,6 +9,7 @@
         </menuitem>
         <menuitem id="datagov_menu_activos" name="Gobierno de Activos" sequence="5">
             <menuitem id="datagov_menu_roles" action="datagov_vista_roles_action" sequence="5"/>
+            <menuitem id="datagov_menu_politicas" action="datagov_vista_politicas_action" sequence="10"/>
             <menuitem id="datagov_menu_procedimientos" action="datagov_vista_procedimientos_action" sequence="15"/>
             <menuitem id="datagov_menu_estandares" action="datagov_vista_estandares_action" sequence="20"/>
         </menuitem>

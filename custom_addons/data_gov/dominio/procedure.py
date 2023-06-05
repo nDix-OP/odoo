@@ -25,6 +25,10 @@ class Procedure(models.Model):  # subclase de esta para persistir automáticamen
     docLink = fields.Text('Enlace al documento', required=True)
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)   # many2one
 
+    # oculto, no se ve en la interfaz
+    policy = fields.Many2many(relation='datagov_policy_procedure', comodel_name='datagov.policy',
+                              column1='id_procedure', column2='id_policy', string='Políticas')
+
     # ---------------------------------------- Private Attributes ---------------------------------
     #  para la base de datos, no se muy bien que son cada una
     _name = 'datagov.procedure'  # nombre de la tabla BD
