@@ -17,3 +17,4 @@ data_gov.access_datagov_data_entity,access_datagov_data_entity,data_gov.model_da
 data_gov.access_datagov_data_element,access_datagov_data_element,data_gov.model_datagov_data_element,base.group_user,1,1,1,1
 data_gov.access_datagov_information_asset,access_datagov_information_asset,data_gov.model_datagov_information_asset,base.group_user,1,1,1,1
 data_gov.access_datagov_policy,access_datagov_policy,data_gov.model_datagov_policy,base.group_user,1,1,1,1
+data_gov.access_datagov_kpi,access_datagov_kpi,data_gov.model_datagov_kpi,base.group_user,1,1,1,1

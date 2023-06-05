@@ -51,6 +51,11 @@ class InformationAsset(models.Model):
         if len(self.dataEntities.ids) == 0:
             raise UserError("El activo de información debe contener, al menos, una entidad de datos.")
 
+    @api.constrains('policy')
+    def check_policy(self):
+        if len(self.policy.ids) == 0:
+            raise UserError("El activo de información debe estar asociado a al menos una política.")
+
     @api.constrains('dataQualityRule')
     def check_data_quality_rules(self):
         if len(self.dataQualityRule.ids) == 0:
