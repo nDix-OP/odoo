@@ -35,6 +35,10 @@ class InformationAsset(models.Model):
                                  column1='id_policy', column2='id_procedure', string='Procedimientos')
     standard = fields.Many2many(relation='datagov_policy_standard', comodel_name='datagov.standard',
                                 column1='id_policy', column2='id_standard', string='Normas')
+    # solo se ve desde el activo de información
+    informationAsset =\
+        fields.Many2many(relation='datagov_policy_information_asset', comodel_name='datagov.information.asset',
+                         column1='id_policy', column2='id_activo', string='Activos de información')
 
     # TODO cada una de las relaciones con otras tablas
 

@@ -29,14 +29,15 @@ class DataQualityRule(models.Model):
     # este método se copia en la entidad, activo y elemento para cuando se inserta desde ahí
     @api.onchange('dataElement', 'dataEntity', 'informationAsset')
     def on_change_many2many(self):
-        # más cómodo si se ejecuta la query conjunta
-        query = "SELECT id_regla, id_elemento FROM datagov_data_element_rule WHERE id_regla = " + self.id + \
-                "UNION SELECT id_regla, id_entidad FROM datagov_data_entity_rule WHERE id_regla = " + self.id + \
-                "UNION SELECT id_regla, id_activo FROM datagov_information_asset_rule WHERE id_regla = " + self.id
-        self.env.cr.execute(query)
-        resultado = self.env.cr.fetchall()
-        print(str(resultado))
-        if len(resultado) > 0: # no incluye al actual
-            texto = "La regla de calidad de datos ya está asignada a otro activo de información, entidad o elemento. " \
-                    "Solo puede estar asignada a uno."
-            raise UserError(texto)
+        if self.id:  # si hay id
+            i = self.id
+            # más cómodo si se ejecuta la query conjunta
+            query = "SELECT id_regla, id_elemento FROM datagov_data_element_rule WHERE id_regla = " + str(i) + \
+                    " UNION SELECT id_regla, id_entidad FROM datagov_data_entity_rule WHERE id_regla = " + str(i) + \
+                    " UNION SELECT id_regla, id_activo FROM datagov_information_asset_rule WHERE id_regla = " + str(i)
+            self.env.cr.execute(query)
+            resultado = self.env.cr.fetchall()
+            if len(resultado) > 0:  # no incluye el actual
+                texto = "La regla de calidad de datos ya está asignada a otro activo de información, entidad o " \
+                        "elemento, y solo puede estar asignada a uno."
+                raise UserError(texto)

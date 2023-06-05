@@ -18,18 +18,6 @@
                             <field name="owner" options="{'no_create': True, 'no_edit': True}"/>
                         </group>
                     </group>
-                    Regla de calidad asignada a (solo se permite a uno):
-                    <group>
-                        <group>
-                            <field name="informationAsset" options="{'no_create': True, 'no_edit': True}"/>
-                        </group>
-                        <group>
-                            <field name="dataEntity" options="{'no_create': True, 'no_edit': True}"/>
-                        </group>
-                        <group>
-                            <field name="dataElement" options="{'no_create': True, 'no_edit': True}"/>
-                        </group>
-                    </group>
                     <notebook>
                         <page name="description" string="Descripción" >
                             <field name='description'/>

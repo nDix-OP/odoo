@@ -31,6 +31,9 @@
                     </group>
                     <!-- Aquí empiezan las pestañas -->
                     <notebook>
+                        <page name="policy" string="Políticas" >
+                            <field name='policy'/>
+                        </page>
                         <page name="dataEntities" string="Entidades de datos" >
                             <field name='dataEntities'/>
                         </page>
@@ -55,6 +58,7 @@
                 <field name="securityClassification"/>
                 <field name="dataEntities" widget="many2many_tags"/>
                 <field name="dataQualityRule" widget="many2many_tags"/>
+                <field name="policy" widget="many2many_tags"/>
                 <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
         </field>
@@ -72,6 +76,7 @@
                 <field name="securityClassification"/>
                 <field name="dataEntities" widget="many2many_tags"/>
                 <field name="dataQualityRule"/>
+                <field name="policy"/>
                 <field name="description"/>
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
@@ -79,6 +84,7 @@
                     <filter string="Administrador" name='steward' context="{'group_by':'steward'}"/>
                     <filter string="Clasificación de seguridad" name='securityClassification'
                             context="{'group_by':'securityClassification'}"/>
+                    <filter string="Política" name='policy' context="{'group_by':'policy'}"/>
                     <filter string="Entidades de datos" name='dataEntities' context="{'group_by':'dataEntities'}"/>
                 </group>
             </search>
