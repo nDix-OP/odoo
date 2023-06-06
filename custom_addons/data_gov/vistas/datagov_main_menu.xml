@@ -37,6 +37,7 @@
         <menuitem id="datagov_menu_supervision" name="Supervisión" sequence="25">
             <menuitem id="datagov_menu_kpi" action="datagov_vista_kpi_action" sequence="15"/>
             <menuitem id="datagov_menu_parametros" action="datagov_vista_parametros_action" sequence="20"/>
+            <menuitem id="datagov_menu_medidas_calidad_datos" action="datagov_vista_medidas_calidad_datos_action" sequence="25"/>
         </menuitem>
     </menuitem>
 </odoo>

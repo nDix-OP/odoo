@@ -32,6 +32,9 @@
                         <page string="Procedimientos">
                             <field name="procedure"/>
                         </page>
+                        <page string="Métricas">
+                            <field name="metric"/>
+                        </page>
                         <page string="Normas">
                             <field name="standard"/>
                         </page>
@@ -58,6 +61,7 @@
                 <field name="statusDate"/>
                 <field name="procedure" widget="many2many_tags"/>
                 <field name="standard" widget="many2many_tags"/>
+                <field name="metric" widget="many2many_tags"/>
             </tree>
         </field>
     </record>
@@ -70,16 +74,17 @@
             <search>
                 <!-- aquí va el nombre de los atributos, no el que se muestra por la interfaz -->
                 <field name="name"/>
-                <field name="category"/>
-                <field name="owner"/>
-                <field name="statement"/>
-                <field name="rationale"/>
-                <field name="implication"/>
-                <field name="scope"/>
-                <field name="status"/>
-                <field name="statusDate"/>
-                <field name="procedure"/>
-                <field name="standard"/>
+                <field name="category" optional="hide"/>
+                <field name="owner" optional="hide"/>
+                <field name="statement" optional="hide"/>
+                <field name="rationale" optional="hide"/>
+                <field name="implication" optional="hide"/>
+                <field name="scope" optional="hide"/>
+                <field name="status" optional="hide"/>
+                <field name="statusDate" optional="hide"/>
+                <field name="procedure" optional="hide"/>
+                <field name="standard" optional="hide"/>
+                <field name="metric" optional="hide"/>
                 <!-- para que en el botón de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
                     <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
@@ -87,6 +92,7 @@
                     <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
                     <filter string="Procedimiento" name='procedure' context="{'group_by':'procedure'}"/>
                     <filter string="Normas" name='standard' context="{'group_by':'standard'}"/>
+                    <filter string="Métrica" name='metric' context="{'group_by':'metric'}"/>
                 </group>
             </search>
         </field>

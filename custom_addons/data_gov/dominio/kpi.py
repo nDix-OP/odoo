@@ -35,9 +35,10 @@ class Kpi(models.Model):
     objective = fields.Many2one('datagov.dg.objective', 'Objetivo')  # puede ser nulo
     # solo se ve desde el activo de información
     inputParameter = fields.Many2many(relation='datagov_kpi_input_parameter', comodel_name='datagov.input.parameter',
-                                      column1='id_policy', column2='id_parameter', string='Parámetros de entrada')
+                                      column1='id_kpi', column2='id_parameter', string='Parámetros de entrada')
 
-    # TODO cada una de las relaciones con otras tablas
+    policy = fields.Many2many(relation='datagov_policy_kpi', comodel_name='datagov.policy',
+                              column1='id_kpi', column2='id_policy', string='Políticas')
 
     # restricción
     @api.onchange('category')

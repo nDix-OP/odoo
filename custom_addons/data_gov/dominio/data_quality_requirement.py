@@ -27,4 +27,3 @@ class DataQualityRequirement(models.Model):
     # Data quality characteristic
     dataQualityCharacteristic = fields.Many2one('datagov.data.quality.characteristic',
                                                 'Característica de calidad de datos', required=True)
-    # TODO property measure

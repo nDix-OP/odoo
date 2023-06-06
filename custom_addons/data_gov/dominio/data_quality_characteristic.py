@@ -20,4 +20,6 @@ class DataQualityCharacteristic(models.Model):
     # oculto
     dataQualityRequirement = fields.One2many('datagov.data.quality.requirement', 'dataQualityCharacteristic',
                                              string="Requisitos de calidad de datos")
-    # TODO property measure
+
+    dataQualityMeasure = fields.One2many('datagov.data.quality.property.measure', 'dataQualityCharacteristic',
+                                         string="Propiedad de medida de calidad de datos")
