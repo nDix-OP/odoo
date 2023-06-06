@@ -32,6 +32,8 @@
         "vistas/datagov_activos_informacion_views.xml",
         "vistas/datagov_politicas_views.xml",
         "vistas/datagov_kpi_views.xml",
+        "vistas/datagov_caracteristica_calidad_datos_views.xml",
+        "vistas/datagov_requisitos_calidad_datos_views.xml",
         "vistas/datagov_main_menu.xml",  # IMPORTANTE: ponerlo al final porque usa cosas de los otros xml de vistas
     ],
     "application": True,

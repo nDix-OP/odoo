@@ -17,6 +17,9 @@
                         <group>
                             <field name="owner" options="{'no_create': True, 'no_edit': True}"/>
                         </group>
+                        <group>
+                            <field name="dataQualityRequirement" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
                     </group>
                     <notebook>
                         <page name="description" string="Descripción" >
@@ -36,6 +39,7 @@
             <tree string="Reglas de calidad de los datos">
                 <field name="name"/>
                 <field name="owner"/>
+                <field name="dataQualityRequirement"/>
                 <field name="description"/>
             </tree>
         </field>
@@ -49,10 +53,13 @@
             <search>
                  <field name="name"/>
                 <field name="owner"/>
+                <field name="dataQualityRequirement"/>
                 <field name="description"/>
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
                     <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="Requisito de calidad de datos" name='dataQualityRequirement'
+                            context="{'group_by':'dataQualityRequirement'}"/>
                 </group>
             </search>
         </field>

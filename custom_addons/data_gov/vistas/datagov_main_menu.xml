@@ -27,6 +27,10 @@
             <menuitem id="datagov_menu_categorias" action="datagov_vista_categorias_action" sequence="35"/>
         </menuitem>
         <menuitem id="datagov_menu_gestion_activos" name="Gestión de los AI" sequence="20">
+            <menuitem id="datagov_menu_requisitos_calidad_datos" action="datagov_vista_requisitos_calidad_datos_action"
+                      sequence="10"/>
+            <menuitem id="datagov_menu_caracteristica_calidad_datos" action="datagov_vista_caracteristica_calidad_datos_action"
+                      sequence="15"/>
             <menuitem id="datagov_menu_reglas_calidad" action="datagov_vista_reglas_calidad_action" sequence="20"/>
             <menuitem id="datagov_menu_clasificacion_seguridad" action="datagov_vista_clasificacion_seguridad_action" sequence="25"/>
         </menuitem>

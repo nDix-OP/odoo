@@ -23,7 +23,11 @@ class InformationAsset(models.Model):
     # Políticas, solo se cambian desde aquí
     policy = fields.Many2many(relation='datagov_policy_information_asset', comodel_name='datagov.policy',
                               column1='id_activo', column2='id_policy', string='Políticas')
-    # TODO requirement (pero no se añade desde este lado)
+    # atributo oculto para el requisito
+    dataQualityRequirement = fields.Many2many(relation='datagov_data_quality_requirement_information_asset',
+                                              comodel_name='datagov.data.quality.requirement',
+                                              column1='id_data_quality_requirement', column2='id_information_asset',
+                                              string='Requisitos de calidad de datos')
     dataEntities =\
         fields.Many2many(relation='datagov_data_entity_information_asset', comodel_name='datagov.data.entity',
                          column1='id_data_entity', column2='id_information_asset', string='Entidades de datos')

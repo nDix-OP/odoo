@@ -23,8 +23,11 @@ class DataQualityRule(models.Model):
     dataEntity = fields.Many2many(relation='datagov_data_entity_rule', comodel_name='datagov.data.entity',
                                   column1='id_regla', column2='id_entidad', string='Entidad de datos que la aplica')
     informationAsset =\
-        fields.Many2many(relation='datagov_information_asset_rule',comodel_name='datagov.information.asset',
+        fields.Many2many(relation='datagov_information_asset_rule', comodel_name='datagov.information.asset',
                          column1='id_regla', column2='id_activo', string='Activo de información que la aplica')
+
+    dataQualityRequirement = fields.Many2one('datagov.data.quality.requirement', 'Requisito de calidad de datos',
+                                             required=True)
 
     # este método se copia en la entidad, activo y elemento para cuando se inserta desde ahí
     @api.onchange('dataElement', 'dataEntity', 'informationAsset')
