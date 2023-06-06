@@ -35,8 +35,7 @@
                     <!-- Aqui empiezan las pestañas -->
                     <notebook>
                         <page string="Métricas">
-                            <p>Las métricas ya existentes deben agregarse desde la vista de la métrica "Métricas de seguimiento".</p>
-                            <field name="metric"/>
+                            <field name="metric" widget="many2many"/>
                         </page>
                         <page string="Descripción">
                             <group>
