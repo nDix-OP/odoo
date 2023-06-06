@@ -34,6 +34,10 @@
                     </group>
                     <!-- Aqui empiezan las pestañas -->
                     <notebook>
+                        <page string="Métricas">
+                            <p>Las métricas ya existentes deben agregarse desde la vista de la métrica "Métricas de seguimiento".</p>
+                            <field name="metric"/>
+                        </page>
                         <page string="Descripción">
                             <group>
                                 <group>

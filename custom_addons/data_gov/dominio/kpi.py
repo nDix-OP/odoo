@@ -49,9 +49,8 @@ class Kpi(models.Model):
             raise UserError("La categoría del actor debe ser una del tipo 'KPI'.")
         return
 
-    @api.constrains('metric')
+    @api.constrains('inputParameter')
     def check_has_input_parameter(self):
-        print("AAAAAAAAAAAAAAAA" + self.inputParameter.ids)
         if len(self.inputParameter.ids) == 0:
             raise UserError("La métrica debe tener, al menos, un parámetro de entrada.")
 
