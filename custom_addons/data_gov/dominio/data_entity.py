@@ -18,7 +18,7 @@ class DataEntity(models.Model):
     securityClassification = fields.Many2one('datagov.security.classification', 'Clasificación de seguridad',
                                              required=True)
     steward = fields.Many2one('datagov.actor', 'Administrador', required=True)
-    isDigital = fields.Boolean('Es digital', required=True)
+    isDigital = fields.Boolean('Digital', required=True)
     lineage = fields.Text('Linaje', required=True)
     # Atributos de relaciones con otras clases del modelo
     masterDataSource = fields.Many2one('datagov.data.source', 'Fuente de datos maestra', required=True)

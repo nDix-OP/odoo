@@ -14,7 +14,7 @@ class Actor(models.Model):
     id = fields.Id('Id', required=True)
     name = fields.Text('Nombre', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
-    description = fields.Text('Description', required=True)
+    description = fields.Text('Descripción', required=True)
     organizationUnit = fields.Many2one('datagov.organization.unit', 'Departamento', required=True)
     location = fields.Many2one('datagov.location', 'Ubicación', required=True)
     # aunque se use Many2one y de ese tipo, no se crean FK en la BD
@@ -24,6 +24,10 @@ class Actor(models.Model):
                                 column2='id_role', string='Roles')
     # One2many (otra tabla, atributo otra clase y description), poner many2one en la otra clase
     objective = fields.One2many('datagov.dg.objective', 'actor', string='Objetivos como responsable')
+
+    # atributo oculto para la indicar que se le difunde el KPI
+    kpi_disseminatedTo = fields.Many2many(relation='datagov_kpi_disseminated_to', comodel_name='datagov.kpi',
+                                          column1='id_actor', column2='id_kpi', string='KPIs a los que se le difunde')
 
     # restricción de que la categoría sea de actor
     @api.onchange('category')

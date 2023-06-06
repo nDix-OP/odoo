@@ -34,6 +34,9 @@
                     </group>
                     <!-- Aqui empiezan las pestañas -->
                     <notebook>
+                        <page string="Métricas">
+                            <field name="metric" widget="many2many"/>
+                        </page>
                         <page string="Descripción">
                             <group>
                                 <group>

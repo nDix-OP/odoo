@@ -18,6 +18,8 @@ class DgObjective(models.Model):  # subclase de esta para persistir automáticam
     actor = fields.Many2one('datagov.actor', 'Responsable', required=True)
 
     # TODO el campo metric, una vez se haga la clase KPI
+    # es One2Many, por lo que no se puede agregar desde la vista de formulario
+    metric = fields.One2many('datagov.kpi', 'objective', string='Métricas')
 
     # ---------------------------------------- Atributos privados ---------------------------------
     #  para la base de datos, no se muy bien que son cada una
@@ -37,3 +39,9 @@ class DgObjective(models.Model):  # subclase de esta para persistir automáticam
             raise UserError("La categoría del objetivo de gobernanza de datos debe ser una del tipo " +
                             "'Objetivo Gob. datos'.")
         return
+
+    @api.constrains('metric')
+    def check_has_metric(self):
+        if len(self.metric.ids) == 0:
+            raise UserError("El objetivo de gobernanza debe tener, al menos, una métrica asociada.")
+

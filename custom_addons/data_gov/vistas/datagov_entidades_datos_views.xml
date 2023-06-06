@@ -94,7 +94,6 @@
                 <field name="isDigital"/>
                 <field name="lineage"/>
                 <field name="term"/>
-                <!-- TODO data elements y assets -->
                 <field name="composedOf"/>
                 <field name="dataElements" widget="many2many_tags"/>
                 <field name="compone" invisible="1"/> <!-- que no se vea -->
@@ -107,7 +106,7 @@
                     <filter string="Administrador" name='steward' context="{'group_by':'steward'}"/>
                     <filter string="Clasificación de seguridad" name='securityClassification'
                             context="{'group_by':'securityClassification'}"/>
-                    <filter string="Es digital" name='isDigital' context="{'group_by':'isDigital'}"/>
+                    <filter string="Digital" name='isDigital' context="{'group_by':'isDigital'}"/>
                     <filter string="Entidad de la que forma parte" name='compone' context="{'group_by':'compone'}"/>
                     <filter string="Activo de información" name='informationAssets'
                             context="{'group_by':'informationAssets'}"/>
