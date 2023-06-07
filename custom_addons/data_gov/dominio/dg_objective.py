@@ -17,9 +17,8 @@ class DgObjective(models.Model):  # subclase de esta para persistir automáticam
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)  # many2one (tabla BD, descripción)
     actor = fields.Many2one('datagov.actor', 'Responsable', required=True)
 
-    # TODO el campo metric, una vez se haga la clase KPI
     # es One2Many, por lo que no se puede agregar desde la vista de formulario
-    metric = fields.One2many('datagov.kpi', 'objective', string='Métricas')
+    metric = fields.One2many('datagov.kpi', 'objective', string='Métricas (KPI)')
 
     # ---------------------------------------- Atributos privados ---------------------------------
     #  para la base de datos, no se muy bien que son cada una
