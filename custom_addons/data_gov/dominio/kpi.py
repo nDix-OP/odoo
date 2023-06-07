@@ -1,9 +1,6 @@
-import datetime
-
 from odoo import fields, models, api
 from odoo.exceptions import UserError
 from .category_type import CategoryType
-from .status import Status as St
 
 
 class Kpi(models.Model):
@@ -26,7 +23,7 @@ class Kpi(models.Model):
     disseminationMode = fields.Text('Modo de difusión', required=True)
     frequencyOfDissemination = fields.Text('Frecuencia de difusión', required=True)
     disseminatedBy = fields.Many2one('datagov.actor', 'Difundido por', required=True)
-    # Lista de a los que se difunde, poner otro atributo (oculto) en el actor TODO
+    # Lista de a los que se difunde
     disseminatedTo = fields.Many2many(relation='datagov_kpi_disseminated_to', comodel_name='datagov.actor',
                                       column1='id_kpi', column2='id_actor', string='Difundido a')
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)
@@ -35,23 +32,24 @@ class Kpi(models.Model):
     objective = fields.Many2one('datagov.dg.objective', 'Objetivo')  # puede ser nulo
     # solo se ve desde el activo de información
     inputParameter = fields.Many2many(relation='datagov_kpi_input_parameter', comodel_name='datagov.input.parameter',
-                                      column1='id_policy', column2='id_parameter', string='Parámetros de entrada')
+                                      column1='id_kpi', column2='id_parameter', string='Parámetros de entrada')
 
-    # TODO cada una de las relaciones con otras tablas
+    policy = fields.Many2many(relation='datagov_policy_kpi', comodel_name='datagov.policy',
+                              column1='id_kpi', column2='id_policy', string='Políticas')
 
     # restricción
     @api.onchange('category')
     def on_change_category(self):
         # comparar con el __eq__, si se pone vacío no salta pero después no deja guardar
-        if self.category.type != CategoryType.KPI and self.category.name is not False:
+        if self.category.type != CategoryType.KPI and self.category.name is not False\
+                or self.category.name == 'Medida de calidad de datos':
             self.category = False  # dejar el valor anterior
             # lanzar notificación
-            raise UserError("La categoría del actor debe ser una del tipo 'KPI'.")
+            texto = "La categoría del KPI debe ser una del tipo 'KPI',y tampoco la medida de calidad de datos ."
+            raise UserError(texto)
         return
 
     @api.constrains('inputParameter')
     def check_has_input_parameter(self):
         if len(self.inputParameter.ids) == 0:
             raise UserError("La métrica debe tener, al menos, un parámetro de entrada.")
-
-

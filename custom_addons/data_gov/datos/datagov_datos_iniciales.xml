@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="0" model="datagov.category">
+            <field name="name">Medida de calidad de datos</field>
+            <field name="description">Categoría generada por el sistema exclusivamente para las métricas de calidad de datos. No se puede modificar.</field>
+            <field name="type">KPI</field>
+        </record>
+    </data>
+</odoo>

@@ -38,7 +38,7 @@ class Actor(models.Model):
         if self.category.type != CategoryType.PRINCIPLE and self.category.name is not False:
             self.category = False  # dejar el valor anterior
             # lanzar notificación
-            raise UserError("La categoría del actor debe ser una del tipo 'Principio'.")
+            raise UserError("La categoría del principio debe ser una del tipo 'Principio'.")
         return
 
     # al cambiar el status, la fecha de modificación es la actual
