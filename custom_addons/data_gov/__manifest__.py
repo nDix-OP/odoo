@@ -13,6 +13,7 @@
     "data": [
         # rellenar con archivos, los csv o xml, ...
         "seguridad/ir.model.access.csv",  # permisos del modelo de dominio
+        "datos/datagov_datos_iniciales.xml",
         "vistas/datagov_categorias_views.xml",
         "vistas/datagov_actores_views.xml",
         "vistas/datagov_roles_views.xml",

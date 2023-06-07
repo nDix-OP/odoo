@@ -42,7 +42,7 @@ class InformationAsset(models.Model):
         if self.category.type != CategoryType.INFORMATION_ASSET and self.category.name is not False:
             self.category = False  # dejar el valor anterior
             # lanzar notificación
-            raise UserError("La categoría del actor debe ser una del tipo 'Activo de información'.")
+            raise UserError("La categoría del activo de información debe ser una del tipo 'Activo de información'.")
         return
 
     @api.constrains('policy')

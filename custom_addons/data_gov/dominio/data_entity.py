@@ -46,7 +46,7 @@ class DataEntity(models.Model):
         if self.category.type != CategoryType.DATA_ENTITY and self.category.name is not False:
             self.category = False  # dejar el valor anterior
             # lanzar notificación
-            raise UserError("La categoría del actor debe ser una del tipo 'Entidad de datos'.")
+            raise UserError("La categoría de la entidad de datos debe ser una del tipo 'Entidad de datos'.")
         return
 
     # Que la relación consigo para la agregación siga siendo 1-N

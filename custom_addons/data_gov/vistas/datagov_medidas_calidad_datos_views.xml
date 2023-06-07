@@ -14,8 +14,8 @@
                     <group>
                         <!-- aqui estan los que van antes de las pestañas, agrupados en columnas -->
                         <group>
-                            <field name="category" options="{'no_create': True, 'no_edit': True}"
-                                readonly="1" default="Medida de calidad de datos"/>
+                            <field name="category" options="{'no_create': True, 'no_edit': True}" readonly="1"
+                                required="False"/>
                             <field name="question" options="{'no_create': True, 'no_edit': True}"/>
                             <field name="interpretation" options="{'no_create': True, 'no_edit': True}"/>
                             <field name="collectedBy" options="{'no_create': True, 'no_edit': True}"/>
@@ -32,7 +32,7 @@
                     </group>
                     <!-- Aqui empiezan las pestañas -->
                     <notebook>
-                        <page string="Recogida de la métrica">
+                        <page string="Difusión de la métrica">
                             <group> <!-- para que salga el nombre del campo a la izquierda, y solo en este -->
                                 <group>
                                     <field name="disseminatedBy"/>

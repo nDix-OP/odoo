@@ -28,5 +28,5 @@ class SecurityClassification(models.Model):  # subclase de esta para persistir a
         if self.category.type != CategoryType.SECURITY_CLASSIFICATION and self.category.name is not False:
             self.category = False  # dejar el valor anterior
             # lanzar notificación
-            raise UserError("La categoría del actor debe ser una del tipo 'Clasificación de seguridad'.")
+            raise UserError("La categoría debe ser una del tipo 'Clasificación de seguridad'.")
         return

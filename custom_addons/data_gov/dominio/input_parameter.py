@@ -11,7 +11,6 @@ class InputParameter(models.Model):  # subclase de esta para persistir automáti
     name = fields.Text('Nombre', required=True)
     description = fields.Text('Descripción', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)   # many2one
-    # TODO relación N-N con KPI
 
     # ---------------------------------------- Private Attributes ---------------------------------
     #  para la base de datos, no se muy bien que son cada una
@@ -29,5 +28,5 @@ class InputParameter(models.Model):  # subclase de esta para persistir automáti
         if self.category.type != CategoryType.INPUT_PARAMETER and self.category.name is not False:
             self.category = False  # dejar el valor anterior
             # lanzar notificación
-            raise UserError("La categoría del actor debe ser una del tipo 'Parámetro de entrada'.")
+            raise UserError("La categoría del parámetro de entrada debe ser una del tipo 'Parámetro de entrada'.")
         return

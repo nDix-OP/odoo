@@ -42,8 +42,6 @@ class InformationAsset(models.Model):
         fields.Many2many(relation='datagov_policy_information_asset', comodel_name='datagov.information.asset',
                          column1='id_policy', column2='id_activo', string='Activos de información')
 
-    # TODO cada una de las relaciones con otras tablas
-
     # restricción
     @api.onchange('category')
     def on_change_category(self):
@@ -51,7 +49,7 @@ class InformationAsset(models.Model):
         if self.category.type != CategoryType.POLICY and self.category.name is not False:
             self.category = False  # dejar el valor anterior
             # lanzar notificación
-            raise UserError("La categoría del actor debe ser una del tipo 'Política'.")
+            raise UserError("La categoría de la política debe ser una del tipo 'Política'.")
         return
 
     # al cambiar el status, la fecha de modificación es la actual

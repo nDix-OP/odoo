@@ -1,5 +1,4 @@
 from odoo import fields, models, api
-from .category_type import CategoryType
 
 
 class DataQualityPropertyMeasure(models.Model):
@@ -24,8 +23,8 @@ class DataQualityPropertyMeasure(models.Model):
                               column1='id_property_measure', column2='id_policy', string='Políticas')
 
     # insertar atributos y relaciones adicionales de la subclase
-    category = fields.Many2one('datagov.category', 'Categoría', required=True,
-                               default='Medida de calidad de datos', readonly=True)
+    category = fields.Many2one('datagov.category', 'Categoría', readonly=True,
+                               default=lambda self: self.env['datagov.category'].search([], limit=1))
 
     dataQualityRequirement = \
         fields.Many2many(relation='datagov_data_quality_property_measure_requirement',
@@ -35,3 +34,15 @@ class DataQualityPropertyMeasure(models.Model):
 
     dataQualityCharacteristic = fields.Many2one('datagov.data.quality.characteristic',
                                                 'Característica de calidad de datos', required=True)
+
+    @api.constrains
+    def check_category(self):
+        cat = self.env['datagov.category'].browse(0)  # la de medida de calidad
+        if not self.category or self.category != cat:
+            self.category = cat
+        return
+
+    # quitar esta función
+    @api.onchange('category')
+    def on_change_category(self):
+        return
