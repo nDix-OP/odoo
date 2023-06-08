@@ -91,7 +91,7 @@
                     <filter string="Estado" name='status' context="{'group_by':'status'}"/>
                     <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
                     <filter string="Procedimiento" name='procedure' context="{'group_by':'procedure'}"/>
-                    <filter string="Normas" name='standard' context="{'group_by':'standard'}"/>
+                    <filter string="Estándar" name='standard' context="{'group_by':'standard'}"/>
                     <filter string="Métrica" name='metric' context="{'group_by':'metric'}"/>
                 </group>
             </search>

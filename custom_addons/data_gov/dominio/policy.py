@@ -34,7 +34,7 @@ class InformationAsset(models.Model):
     procedure = fields.Many2many(relation='datagov_policy_procedure', comodel_name='datagov.procedure',
                                  column1='id_policy', column2='id_procedure', string='Procedimientos')
     standard = fields.Many2many(relation='datagov_policy_standard', comodel_name='datagov.standard',
-                                column1='id_policy', column2='id_standard', string='Normas')
+                                column1='id_policy', column2='id_standard', string='Estándares')
     metric = fields.Many2many(relation='datagov_policy_kpi', comodel_name='datagov.kpi',
                               column1='id_policy', column2='id_kpi', string='Métricas (KPI)')
     # solo se ve desde el activo de información
