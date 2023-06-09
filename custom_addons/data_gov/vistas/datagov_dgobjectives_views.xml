@@ -34,7 +34,7 @@
                     </group>
                     <!-- Aqui empiezan las pestañas -->
                     <notebook>
-                        <page string="Métricas">
+                        <page string="Métricas (KPI)">
                             <field name="metric" widget="many2many"/>
                         </page>
                         <page string="Descripción">
@@ -61,6 +61,7 @@
                 <field name="category"/>
                 <field name="actor"/>
                 <field name="owner"/>
+                <field name="metric"/>
                 <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
         </field>
@@ -79,11 +80,13 @@
                 <field name="category"/>
                 <field name="actor"/>
                 <field name="owner"/>
+                <field name="metric"/>
                 <!-- para que en el botón de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
                     <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
                     <filter string="Responsable" name='actor' context="{'group_by':'actor'}"/>
                     <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
+                    <filter string="Métrica (KPI)" name='metric' context="{'group_by':'metric'}"/>
                 </group>
             </search>
         </field>

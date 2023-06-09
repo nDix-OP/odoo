@@ -47,6 +47,7 @@
                 <field name="owner"/>
                 <field name="statement"/>
                 <field name="rationale"/>
+                <field name="dataQualityCharacteristic"/>
                 <field name="informationAsset" widget="many2many_tags"/>
                 <field name="dataQualityRule" widget="many2many_tags"/>
             </tree>
@@ -65,6 +66,7 @@
                 <field name="rationale"/>
                 <field name="informationAsset"/>
                 <field name="dataQualityRule"/>
+                <field name="dataQualityCharacteristic"/>
                 <!-- para que en el boton de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
                     <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
@@ -72,6 +74,8 @@
                             context="{'group_by':'informationAsset'}"/>
                     <filter string="Regla de calidad de datos" name='dataQualityRule'
                             context="{'group_by':'dataQualityRule'}"/>
+                    <filter string="Característica de calidad de datos" name='dataQualityCharacteristic'
+                            context="{'group_by':'dataQualityCharacteristic'}"/>
                 </group>
             </search>
         </field>
