@@ -59,7 +59,7 @@
         <field name="name">datagov.kpi.tabla</field>
         <field name="model">datagov.kpi</field>
         <field name="arch" type="xml">
-            <tree string="Métricas de seguimiento">
+            <tree string="KPIs de seguimiento">
                 <field name="name"/>
                 <field name="category"/>
                 <field name="owner"/>
@@ -120,7 +120,7 @@
 
     <!-- menu 'principal' con la lista en forma de tabla -->
     <record id="datagov_vista_kpi_action" model="ir.actions.act_window">
-        <field name="name">Métricas de seguimiento</field>
+        <field name="name">KPIs de seguimiento</field>
         <field name="res_model">datagov.kpi</field>
         <field name="view_mode">tree,form</field> <!-- importante sin espacios -->
         <field name="context">{'search_default_available': 1}</field>
