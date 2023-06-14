@@ -22,6 +22,7 @@
                             <field name="status" options="{'no_create': True, 'no_edit': True}"/>
                             <field name="category" options="{'no_create': True, 'no_edit': True}"/>
                             <field name="statement" options="{'no_create': True, 'no_edit': True}"/>
+                            <field name="implication" options="{'no_create': True, 'no_edit': True}"/>
                         </group>
                         <group>
                             <field name="statusDate" options="{'no_create': True, 'no_edit': True}"/>
@@ -29,16 +30,6 @@
                             <field name="rationale" options="{'no_create': True, 'no_edit': True}"/>
                         </group>
                     </group>
-                    <!-- Aqui empiezan las pestañas -->
-                    <notebook>
-                        <page string="Consecuencias">
-                            <group>
-                                <group>
-                                    <field name="implication"/>
-                                </group>
-                            </group>
-                        </page>
-                    </notebook>
                 </sheet>
             </form>
         </field>

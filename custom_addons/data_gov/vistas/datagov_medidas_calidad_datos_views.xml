@@ -64,7 +64,7 @@
         <field name="name">datagov.medidas.calidad.datos.tabla</field>
         <field name="model">datagov.data.quality.property.measure</field>
         <field name="arch" type="xml">
-            <tree string="KPIs de calidad de datos">
+            <tree string="Indicadores de calidad de datos (KPIs)">
                 <field name="name"/>
                 <field name="category" optional="hide"/> <!-- siempre el mismo -->
                 <field name="owner"/>
@@ -133,16 +133,16 @@
 
     <!-- menu 'principal' con la lista en forma de tabla -->
     <record id="datagov_vista_medidas_calidad_datos_action" model="ir.actions.act_window">
-        <field name="name">KPIs de calidad de datos</field>
+        <field name="name">Indicadores de calidad de datos (KPIs)</field>
         <field name="res_model">datagov.data.quality.property.measure</field>
         <field name="view_mode">tree,form</field> <!-- importante sin espacios -->
         <field name="context">{'search_default_available': 1}</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
-                Defina una métrica de calidad de datos para visualizarla aquí
+                Defina un indicador de calidad de datos para visualizarlo aquí
             </p>
             <p>
-                Asegúrese de estar cumpliendo sus objetivos de calidad de datos añadiendo una métrica.
+                Asegúrese de estar cumpliendo sus objetivos de calidad de datos añadiendo un indicador.
             </p>
         </field>
     </record>
