@@ -26,8 +26,8 @@ class Actor(models.Model):
                              default=datetime.date.today())  # se tiene que cambiar en onChange de status
 
     statement = fields.Text('Declaración', required=True)
-    rationale = fields.Text('Razones', required=True)
-    implication = fields.Text('Consecuencias', required=True)
+    rationale = fields.Text('Justificación', required=True)
+    implication = fields.Text('Implicaciones', required=True)
     # aunque se use Many2one y de ese tipo, no se crean FK en la BD
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)
 

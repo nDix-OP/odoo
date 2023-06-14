@@ -34,7 +34,7 @@
                     </group>
                     <!-- Aqui empiezan las pestañas -->
                     <notebook>
-                        <page string="Métricas (KPI)">
+                        <page string="KPIs asociados al objetivo">
                             <field name="metric" widget="many2many"/>
                         </page>
                         <page string="Descripción">
@@ -86,7 +86,7 @@
                     <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
                     <filter string="Responsable" name='actor' context="{'group_by':'actor'}"/>
                     <filter string="Propietario" name='owner' context="{'group_by':'owner'}"/>
-                    <filter string="Métrica (KPI)" name='metric' context="{'group_by':'metric'}"/>
+                    <filter string="KPI asociado" name='metric' context="{'group_by':'metric'}"/>
                 </group>
             </search>
         </field>

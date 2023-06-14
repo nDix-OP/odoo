@@ -15,7 +15,7 @@ class Kpi(models.Model):
     name = fields.Text('Nombre', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
     description = fields.Text('Descripción', required=True)
-    question = fields.Text('Asunto', required=True)
+    question = fields.Text('Preguntas a las que responde', required=True)
     calculation = fields.Text('Cálculo', required=True)
     interpretation = fields.Text('Interpretación', required=True)
     collectedBy = fields.Many2one('datagov.actor', 'Recogido por', required=True)

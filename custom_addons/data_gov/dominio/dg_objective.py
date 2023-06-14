@@ -11,14 +11,14 @@ from odoo.exceptions import UserError
 class DgObjective(models.Model):  # subclase de esta para persistir automáticamente en BD
     id = fields.Id('Id', required=True)
     name = fields.Text('Nombre', required=True)
-    date = fields.Date('Fecha', required=True, default=datetime.date.today())
+    date = fields.Date('Fecha de cumplimiento', required=True, default=datetime.date.today())
     description = fields.Text('Descripción', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)  # many2one (tabla BD, descripción)
     actor = fields.Many2one('datagov.actor', 'Responsable', required=True)
 
     # es One2Many, por lo que no se puede agregar desde la vista de formulario
-    metric = fields.One2many('datagov.kpi', 'objective', string='Métricas (KPI)')
+    metric = fields.One2many('datagov.kpi', 'objective', string='KPIs asociados al objetivo')
 
     # ---------------------------------------- Atributos privados ---------------------------------
     #  para la base de datos, no se muy bien que son cada una
