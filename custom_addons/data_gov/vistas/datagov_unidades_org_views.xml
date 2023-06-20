@@ -12,10 +12,10 @@
                             <field name="name"/> <!-- se pone el nombre del atributo en el field -->
                         </h1>
                     </div>
+                    <group>
+                        <field name="description" options="{'no_create': True, 'no_edit': True}"/>
+                    </group>
                     <notebook>
-                        <page string="Descripción">
-                            <field name="description"/>
-                        </page>
                     </notebook>
                 </sheet>
             </form>

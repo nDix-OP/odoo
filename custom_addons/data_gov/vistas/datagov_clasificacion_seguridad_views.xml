@@ -12,21 +12,17 @@
                             <field name="name"/> <!-- se pone el nombre del atributo en el field -->
                         </h1>
                     </div>
+                    <field name="id" invisible="1"/>
+                    <!-- aqui estan los que van antes de las pestañas, agrupados en columnas -->
                     <group>
-                        <field name="id" invisible="1"/>
-                        <!-- aqui estan los que van antes de las pestañas, agrupados en columnas -->
+                        <group>
+                            <field name="description" options="{'no_create': True, 'no_edit': True}"/>
+                        </group>
                         <group>
                             <field name="category" options="{'no_create': True, 'no_edit': True}"/>
                         </group>
                     </group>
                     <notebook>
-                        <page string="Descripción">
-                            <group>
-                                <group>
-                                    <field name="description"/>
-                                </group>
-                            </group>
-                        </page>
                     </notebook>
                 </sheet>
             </form>
