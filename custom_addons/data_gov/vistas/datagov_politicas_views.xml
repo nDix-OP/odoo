@@ -35,7 +35,7 @@
                         <page string="Métricas">
                             <field name="metric"/>
                         </page>
-                        <page string="Normas">
+                        <page string="Estándares">
                             <field name="standard"/>
                         </page>
                     </notebook>

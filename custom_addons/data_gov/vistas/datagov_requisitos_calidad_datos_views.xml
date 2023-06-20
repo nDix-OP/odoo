@@ -83,7 +83,7 @@
 
     <!-- menu 'principal' -->
     <record id="datagov_vista_requisitos_calidad_datos_action" model="ir.actions.act_window">
-        <field name="name">Requisitos de calidad de los datos</field>
+        <field name="name">Requisitos de calidad</field>
         <field name="res_model">datagov.data.quality.requirement</field>
         <field name="view_mode">tree,form</field>
         <field name="context">{'search_default_available': 1}</field>

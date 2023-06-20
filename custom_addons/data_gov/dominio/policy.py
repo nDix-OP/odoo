@@ -25,7 +25,7 @@ class InformationAsset(models.Model):
     statusDate = fields.Date('Fecha de estado', required=True,
                              default=datetime.date.today())  # se tiene que cambiar en onChange de status
     scope = fields.Text('Alcance', required=True)
-    statement = fields.Text('Declaración', required=True)
+    statement = fields.Text('Definición', required=True)
     rationale = fields.Text('Justificación', required=True)
     implication = fields.Text('Implicaciones', required=True)
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)

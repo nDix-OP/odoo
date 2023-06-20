@@ -38,7 +38,7 @@
         <field name="name">datagov.clasificacion.seguridad.tabla</field>
         <field name="model">datagov.security.classification</field>
         <field name="arch" type="xml">
-            <tree string="Clasificación de seguridad">
+            <tree string="Nivel de seguridad">
                 <field name="name"/>
                 <field name="category"/>
                 <field name="description"/>
