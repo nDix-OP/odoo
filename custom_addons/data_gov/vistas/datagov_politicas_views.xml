@@ -8,6 +8,8 @@
             <form>
                 <sheet> <!-- empieza la hoja en si -->
                     <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre de la política"/>
                         <h1>
                             <field name="name"/> <!-- se pone el nombre del atributo en el field -->
                         </h1>
@@ -35,7 +37,7 @@
                         <page string="Métricas">
                             <field name="metric"/>
                         </page>
-                        <page string="Normas">
+                        <page string="Estándares">
                             <field name="standard"/>
                         </page>
                     </notebook>
@@ -51,12 +53,12 @@
         <field name="arch" type="xml">
             <tree string="Políticas">
                 <field name="name"/>
-                <field name="category"/>
-                <field name="owner"/>
                 <field name="statement" optional="hide"/>
                 <field name="rationale" optional="hide"/>
                 <field name="implication" optional="hide"/>
                 <field name="scope"/>
+                <field name="category"/>
+                <field name="owner"/>
                 <field name="status"/>
                 <field name="statusDate"/>
                 <field name="procedure" widget="many2many_tags"/>

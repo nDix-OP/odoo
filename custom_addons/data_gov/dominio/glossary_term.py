@@ -24,9 +24,9 @@ class GlossaryTerm(models.Model):
     ], string='Estado', required=True)
     statusDate = fields.Date('Fecha de estado', required=True,
                              default=datetime.date.today())  # se tiene que cambiar en onChange de status
-    acronym = fields.Text('Acrónimo', required=True)
+    acronym = fields.Text('Acrónimo')
     definition = fields.Text('Definición', required=True)
-    misunderstanding = fields.Text('Confusión', required=True)
+    misunderstanding = fields.Text('No confundir con')
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
     termSource = fields.Text('Fuente', required=True)
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)   # many2one (tabla BD, descripcion)

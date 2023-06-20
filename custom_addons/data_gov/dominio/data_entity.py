@@ -15,7 +15,7 @@ class DataEntity(models.Model):
     name = fields.Text('Nombre', required=True)
     category = fields.Many2one('datagov.category', 'Categoría', required=True)  # clase Category
     description = fields.Text('Descripción', required=True)
-    securityClassification = fields.Many2one('datagov.security.classification', 'Clasificación de seguridad',
+    securityClassification = fields.Many2one('datagov.security.classification', 'Nivel de seguridad',
                                              required=True)
     steward = fields.Many2one('datagov.actor', 'Administrador', required=True)
     isDigital = fields.Boolean('Digital', required=True)

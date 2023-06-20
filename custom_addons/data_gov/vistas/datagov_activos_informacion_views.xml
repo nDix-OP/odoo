@@ -13,6 +13,8 @@
                 -->
                 <sheet> <!-- empieza la hoja en si -->
                     <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre del activo de información"/>
                         <h1>
                             <field name="name"/> <!-- se pone el nombre del atributo en el field -->
                         </h1>
@@ -53,13 +55,13 @@
         <field name="arch" type="xml">
             <tree string="Activos de información">
                 <field name="name"/>
-                <field name="category"/>
-                <field name="steward"/>
-                <field name="securityClassification"/>
+                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
+                <field name="category" optional="hide"/>
+                <field name="steward" optional="hide"/>
+                <field name="securityClassification" optional="hide"/>
                 <field name="dataEntities" widget="many2many_tags"/>
                 <field name="dataQualityRule" widget="many2many_tags"/>
                 <field name="policy" widget="many2many_tags"/>
-                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
         </field>
     </record>

@@ -18,6 +18,8 @@
                 -->
                 <sheet> <!-- empieza la hoja en si -->
                     <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre de la categoría"/>
                         <h1>
                             <field name="name"/> <!-- se pone el nombre del atributo en el field -->
                         </h1>
@@ -47,8 +49,8 @@
             <!-- lo de col y colspan es para el ancho de las columnas -->
             <tree string="Categorías">
                 <field name="name"/>
-                <field name="type"/>
                 <field name="description"/>
+                <field name="type"/>
             </tree>
         </field>
     </record>

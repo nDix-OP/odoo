@@ -8,6 +8,8 @@
             <form>
                 <sheet> <!-- empieza la hoja en si -->
                     <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre de la característica de calidad"/>
                         <h1>
                             <field name="name"/> <!-- se pone el nombre del atributo en el field -->
                         </h1>
@@ -40,10 +42,10 @@
         <field name="arch" type="xml">
             <tree string="Características de calidad de los datos">
                 <field name="name"/>
+                <field name="description"/>
                 <field name="isInherent"/>
                 <field name="isSystemDependent"/>
                 <field name="owner"/>
-                <field name="description"/>
             </tree>
         </field>
     </record>
@@ -71,7 +73,7 @@
 
     <!-- menu 'principal' -->
     <record id="datagov_vista_caracteristica_calidad_datos_action" model="ir.actions.act_window">
-        <field name="name">Características de calidad de los datos</field>
+        <field name="name">Características de calidad</field>
         <field name="res_model">datagov.data.quality.characteristic</field>
         <field name="view_mode">tree,form</field>
         <field name="context">{'search_default_available': 1}</field>

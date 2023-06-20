@@ -36,15 +36,15 @@ class Category(models.Model):
     ]
 
     # que la generada por el sistema no se pueda modificar ni borrar
-    @api.constrains('name', 'description')
+    @api.onchange('name', 'description')
     def check_no_actualizar(self):
         nombre = 'Medida de calidad de datos'
         desc = 'Categoría generada por el sistema exclusivamente para las métricas de calidad de datos. ' \
                'No se puede modificar.'
         # para que no salga al crearlo
-        if self.name == nombre:
-            if self.description != desc:
-                raise UserError("No se puede modificar esta categoría.")
+        if self.name == nombre or self._origin.name == nombre:
+            if self.description != desc or self.name != nombre:
+                raise UserError("No se puede modificar esta categoría predefinida por el sistema.")
 
     def unlink(self):
         for record in self:

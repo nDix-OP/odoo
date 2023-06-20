@@ -12,6 +12,8 @@
             <form>
                 <sheet> <!-- empieza la hoja en si -->
                     <div class="oe_title">
+                        <!-- la etiqueta en la parte superior -->
+                        <label for="name" class="o_form_input" string="Nombre del principio"/>
                         <h1>
                             <field name="name"/> <!-- se pone el nombre del atributo en el field -->
                         </h1>
@@ -42,11 +44,11 @@
         <field name="arch" type="xml">
             <tree string="Principios">
                 <field name="name"/>
-                <field name="category"/>
-                <field name="owner"/>
                 <field name="statement"/>
                 <field name="rationale"/>
                 <field name="implication"/>
+                <field name="category"/>
+                <field name="owner"/>
                 <field name="status"/>
                 <field name="statusDate"/>
             </tree>
