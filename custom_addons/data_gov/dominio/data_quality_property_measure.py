@@ -24,7 +24,8 @@ class DataQualityPropertyMeasure(models.Model):
 
     # insertar atributos y relaciones adicionales de la subclase
     category = fields.Many2one('datagov.category', 'Categoría', readonly=True,
-                               default=lambda self: self.env['datagov.category'].search([], limit=1))
+                               default=lambda self: self.env['datagov.category'].
+                               search([('name', '=', 'Medida de calidad de datos')], limit=1))
 
     dataQualityRequirement = \
         fields.Many2many(relation='datagov_data_quality_property_measure_requirement',
@@ -37,12 +38,13 @@ class DataQualityPropertyMeasure(models.Model):
 
     @api.constrains
     def check_category(self):
-        cat = self.env['datagov.category'].browse(0)  # la de medida de calidad
+        nombre = 'Medida de calidad de datos'  # nombre de la categoría predeterminada
+        cat = self.env['datagov.category'].search([('name', '=', nombre)])  # obtener solo esa
         if not self.category or self.category != cat:
             self.category = cat
         return
 
-    # quitar esta función
+    # para sobrescribir la restricción de la clase KPI
     @api.onchange('category')
     def on_change_category(self):
         return
