@@ -44,8 +44,11 @@
                     </group>
                     <!-- Aquí empiezan las pestañas -->
                     <notebook>
-                        <page name="composedOf" string="Compuesta por" >
+                        <page name="composedOf" string="Entidades que la componen" >
                             <field name='composedOf'/>
+                        </page>
+                        <page name="composedOf" string="Elementos que la componen" >
+                            <field name='dataElements'/>
                         </page>
                         <page string="Activos de información">
                             <field name="informationAssets"/>
@@ -66,19 +69,18 @@
         <field name="arch" type="xml">
             <tree string="Entidades de datos">
                 <field name="name"/>
-                <field name="category"/>
-                <field name="steward"/>
-                <field name="securityClassification"/>
+                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
+                <field name="category" optional="hide"/>
+                <field name="steward" optional="hide"/>
+                <field name="securityClassification" optional="hide"/>
                 <field name="isDigital"/>
-                <field name="lineage"/>
-                <field name="term"/>
-                <!-- TODO data elements y assets -->
+                <field name="lineage" optional="hide"/>
+                <field name="term" optional="hide"/>
                 <field name="composedOf" widget="many2many_tags"/>
                 <field name="compone" invisible="1"/> <!-- que no se vea -->
                 <field name="dataElements" widget="many2many_tags"/>
                 <field name="informationAssets" widget="many2many_tags"/>
                 <field name="dataQualityRule" widget="many2many_tags"/>
-                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
         </field>
     </record>

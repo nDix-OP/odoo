@@ -39,9 +39,9 @@
         <field name="arch" type="xml">
             <tree string="Estándares">
                 <field name="name"/>
+                <field name="description"/>
                 <field name="owner"/>
                 <field name="version"/>
-                <field name="description"/>
             </tree>
         </field>
     </record>

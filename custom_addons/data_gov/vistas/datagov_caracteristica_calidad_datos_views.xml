@@ -42,10 +42,10 @@
         <field name="arch" type="xml">
             <tree string="Características de calidad de los datos">
                 <field name="name"/>
+                <field name="description"/>
                 <field name="isInherent"/>
                 <field name="isSystemDependent"/>
                 <field name="owner"/>
-                <field name="description"/>
             </tree>
         </field>
     </record>

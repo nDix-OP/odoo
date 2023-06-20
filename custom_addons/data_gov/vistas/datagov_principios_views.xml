@@ -44,11 +44,11 @@
         <field name="arch" type="xml">
             <tree string="Principios">
                 <field name="name"/>
-                <field name="category"/>
-                <field name="owner"/>
                 <field name="statement"/>
                 <field name="rationale"/>
                 <field name="implication"/>
+                <field name="category"/>
+                <field name="owner"/>
                 <field name="status"/>
                 <field name="statusDate"/>
             </tree>

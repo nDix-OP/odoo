@@ -55,13 +55,13 @@
         <field name="arch" type="xml">
             <tree string="Activos de información">
                 <field name="name"/>
-                <field name="category"/>
-                <field name="steward"/>
-                <field name="securityClassification"/>
+                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
+                <field name="category" optional="hide"/>
+                <field name="steward" optional="hide"/>
+                <field name="securityClassification" optional="hide"/>
                 <field name="dataEntities" widget="many2many_tags"/>
                 <field name="dataQualityRule" widget="many2many_tags"/>
                 <field name="policy" widget="many2many_tags"/>
-                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
         </field>
     </record>

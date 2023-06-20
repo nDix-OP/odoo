@@ -46,10 +46,10 @@
         <field name="arch" type="xml">
             <tree string="Requisitos de calidad de los datos">
                 <field name="name"/>
-                <field name="owner"/>
                 <field name="statement"/>
                 <field name="rationale"/>
                 <field name="dataQualityCharacteristic"/>
+                <field name="owner"/>
                 <field name="informationAsset" widget="many2many_tags"/>
                 <field name="dataQualityRule" widget="many2many_tags"/>
             </tree>

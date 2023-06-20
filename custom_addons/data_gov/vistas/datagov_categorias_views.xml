@@ -49,8 +49,8 @@
             <!-- lo de col y colspan es para el ancho de las columnas -->
             <tree string="Categorías">
                 <field name="name"/>
-                <field name="type"/>
                 <field name="description"/>
+                <field name="type"/>
             </tree>
         </field>
     </record>

@@ -53,12 +53,12 @@
         <field name="arch" type="xml">
             <tree string="Objetivos de gobernanza de datos">
                 <field name="name"/>
+                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
                 <field name="date"/>
-                <field name="category"/>
+                <field name="category" optional="hide"/>
                 <field name="actor"/>
                 <field name="owner"/>
                 <field name="metric"/>
-                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
         </field>
     </record>

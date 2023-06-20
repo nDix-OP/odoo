@@ -53,15 +53,15 @@
         <field name="arch" type="xml">
             <tree string="Fuentes de datos">
                 <field name="name"/>
+                <field name="description" optional="hide"/>
                 <field name="clase"/>
                 <field name="data_type"/>
-                <field name="steward"/>
-                <field name="owner"/>
-                <field name="logical_model"/>
-                <field name="physical_model"/>
+                <field name="steward" optional="hide"/>
+                <field name="owner" optional="hide"/>
+                <field name="logical_model" optional="hide"/>
+                <field name="physical_model" optional="hide"/>
                 <field name="status"/>
                 <field name="statusDate"/>
-                <field name="description" optional="hide"/>
             </tree>
         </field>
     </record>

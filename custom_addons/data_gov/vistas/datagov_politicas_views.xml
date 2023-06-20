@@ -53,12 +53,12 @@
         <field name="arch" type="xml">
             <tree string="Políticas">
                 <field name="name"/>
-                <field name="category"/>
-                <field name="owner"/>
                 <field name="statement" optional="hide"/>
                 <field name="rationale" optional="hide"/>
                 <field name="implication" optional="hide"/>
                 <field name="scope"/>
+                <field name="category"/>
+                <field name="owner"/>
                 <field name="status"/>
                 <field name="statusDate"/>
                 <field name="procedure" widget="many2many_tags"/>

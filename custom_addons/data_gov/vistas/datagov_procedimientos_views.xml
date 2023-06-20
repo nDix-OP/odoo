@@ -53,13 +53,13 @@
         <field name="arch" type="xml">
             <tree string="Procedimientos">
                 <field name="name"/>
+                <field name="description" optional="hide"/>
                 <field name="category"/>
                 <field name="owner"/>
                 <field name="version"/>
                 <field name="docLink"/>
                 <field name="status"/>
                 <field name="statusDate"/>
-                <field name="description" optional="hide"/>
             </tree>
         </field>
     </record>

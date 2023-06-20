@@ -36,8 +36,8 @@
         <field name="arch" type="xml">
             <tree string="Parámetros para el cálculo">
                 <field name="name"/>
-                <field name="category"/>
                 <field name="description"/>
+                <field name="category"/>
             </tree>
         </field>
     </record>

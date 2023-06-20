@@ -55,8 +55,8 @@
         <field name="arch" type="xml">
             <tree string="Roles">
                 <field name="name"/>
-                <field name="category"/>
                 <field name="mainTasks"/>
+                <field name="category"/>
                 <field name="profile"/>
                 <field name="owner"/>
                 <!-- poner los roles como etiquetas 1-N -->

@@ -38,9 +38,9 @@
         <field name="arch" type="xml">
             <tree string="Reglas de calidad de los datos">
                 <field name="name"/>
-                <field name="owner"/>
-                <field name="dataQualityRequirement"/>
                 <field name="description"/>
+                <field name="dataQualityRequirement"/>
+                <field name="owner"/>
             </tree>
         </field>
     </record>

@@ -60,14 +60,14 @@
         <field name="arch" type="xml">
             <tree string="Actores">
                 <field name="name"/>
-                <field name="category"/>
+                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
+                <field name="category" optional="hide"/>
                 <field name="organizationUnit"/>
                 <field name="location"/>
                 <field name="owner"/>
                 <!-- poner los roles como etiquetas 1-N -->
                 <field name="performs" widget="many2many_tags"/>
                 <field name="objective" widget="many2many_tags"/>
-                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
             </tree>
         </field>
     </record>
