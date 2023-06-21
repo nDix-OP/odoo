@@ -53,7 +53,7 @@
         <field name="arch" type="xml">
             <tree string="Procedimientos">
                 <field name="name"/>
-                <field name="description" optional="hide"/>
+                <field name="description"/>
                 <field name="category"/>
                 <field name="owner"/>
                 <field name="version"/>

@@ -55,7 +55,7 @@
         <field name="arch" type="xml">
             <tree string="Activos de información">
                 <field name="name"/>
-                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
+                <field name="description"/>
                 <field name="category" optional="hide"/>
                 <field name="steward" optional="hide"/>
                 <field name="securityClassification" optional="hide"/>

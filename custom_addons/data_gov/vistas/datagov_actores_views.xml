@@ -60,7 +60,7 @@
         <field name="arch" type="xml">
             <tree string="Actores">
                 <field name="name"/>
-                <field name="description" optional="hide"/> <!-- solo mostrar si se indica -->
+                <field name="description"/>
                 <field name="category" optional="hide"/>
                 <field name="organizationUnit"/>
                 <field name="location"/>
