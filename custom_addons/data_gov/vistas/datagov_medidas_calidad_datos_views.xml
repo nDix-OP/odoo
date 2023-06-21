@@ -66,11 +66,16 @@
         <field name="arch" type="xml">
             <tree string="Indicadores de calidad de datos (KPIs)">
                 <field name="name"/>
-                <field name="category" optional="hide"/> <!-- siempre el mismo -->
+                <field name="description"/>
+                <field name="category" optional="hide"/>
                 <field name="owner"/>
                 <field name="objective" optional="hide"/>
                 <field name="dataQualityCharacteristic" optional="hide"/>
                 <field name="dataQualityRequirement" widget="many2many_tags" optional="hide"/>
+                <field name="question" optional="hide"/>
+                <field name="calculation" optional="hide"/>
+                <field name="interpretation" optional="hide"/>
+                <field name="collectedBy"/>
                 <field name="question" optional="hide"/>
                 <field name="calculation" optional="hide"/>
                 <field name="interpretation" optional="hide"/>

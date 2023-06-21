@@ -53,7 +53,7 @@
         <field name="arch" type="xml">
             <tree string="Fuentes de datos">
                 <field name="name"/>
-                <field name="description" optional="hide"/>
+                <field name="description"/>
                 <field name="clase"/>
                 <field name="data_type"/>
                 <field name="steward" optional="hide"/>

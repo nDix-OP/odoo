@@ -61,13 +61,13 @@
         <field name="arch" type="xml">
             <tree string="Indicadores (KPIs)">
                 <field name="name"/>
-                <field name="category"/>
+                <field name="description"/>
+                <field name="category" optional="hide"/>
                 <field name="owner"/>
                 <field name="objective" optional="hide"/>
                 <field name="question" optional="hide"/>
                 <field name="calculation" optional="hide"/>
                 <field name="interpretation" optional="hide"/>
-                <field name="description" optional="hide"/>
                 <field name="collectedBy"/>
                 <field name="frequencyOfCollection"/>
                 <field name="disseminationMode" optional="hide"/>
