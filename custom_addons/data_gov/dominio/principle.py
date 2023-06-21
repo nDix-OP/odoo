@@ -25,7 +25,7 @@ class Actor(models.Model):
     statusDate = fields.Date('Fecha de estado', required=True,
                              default=datetime.date.today())  # se tiene que cambiar en onChange de status
 
-    statement = fields.Text('Declaración', required=True)
+    statement = fields.Text('Definición', required=True)
     rationale = fields.Text('Justificación', required=True)
     implication = fields.Text('Implicaciones', required=True)
     # aunque se use Many2one y de ese tipo, no se crean FK en la BD
