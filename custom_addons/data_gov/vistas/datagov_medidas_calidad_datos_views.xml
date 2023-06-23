@@ -67,7 +67,7 @@
             <tree string="Indicadores de calidad de datos (KPIs)">
                 <field name="name"/>
                 <field name="description"/>
-                <field name="category" optional="hide"/>
+                <field name="category" optional="hide"/> <!-- siempre el mismo -->
                 <field name="owner"/>
                 <field name="objective" optional="hide"/>
                 <field name="dataQualityCharacteristic" optional="hide"/>
