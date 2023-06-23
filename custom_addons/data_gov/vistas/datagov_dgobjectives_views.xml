@@ -58,7 +58,7 @@
                 <field name="category" optional="hide"/>
                 <field name="actor"/>
                 <field name="owner"/>
-                <field name="metric"/>
+                <field name="metric" widget="many2many_tags"/>
             </tree>
         </field>
     </record>

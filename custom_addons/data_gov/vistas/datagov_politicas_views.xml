@@ -53,7 +53,7 @@
         <field name="arch" type="xml">
             <tree string="Políticas">
                 <field name="name"/>
-                <field name="statement" optional="hide"/>
+                <field name="statement"/>
                 <field name="rationale" optional="hide"/>
                 <field name="implication" optional="hide"/>
                 <field name="scope"/>
