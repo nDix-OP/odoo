@@ -12,7 +12,7 @@ class DataQualityRequirement(models.Model):
     id = fields.Id('Id', required=True)
     name = fields.Text('Nombre', required=True)
     statement = fields.Text('Definición', required=True)
-    rationale = fields.Text('Razones', required=True)
+    rationale = fields.Text('Justificación', required=True)
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)
 
     # Atributos de relaciones con otras clases del modelo

@@ -4,7 +4,7 @@
     <data noupdate="1">
         <record id="0" model="datagov.category">
             <field name="name">Medida de calidad de datos</field>
-            <field name="description">Categoría generada por el sistema exclusivamente para las métricas de calidad de datos. No se puede modificar.</field>
+            <field name="description">Categoría que abarca los KPIs relacionados con la calidad de los datos.</field>
             <field name="type">KPI</field>
         </record>
     </data>
