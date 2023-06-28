@@ -79,7 +79,8 @@ class DataEntity(models.Model):
                     " UNION SELECT id_regla, id_activo FROM datagov_information_asset_rule WHERE id_regla = " + str(i)
             self.env.cr.execute(query)
             resultado = self.env.cr.fetchall()
-            if len(resultado) > 0:  # no incluye el actual
+            regla = self.env['datagov.data.quality.rule'].browse(i)
+            if len(resultado) > 0 and regla.dataEntity.name != self.name:  # no incluye el actual si se borra
                 texto = "La regla de calidad de datos ya está asignada a otro activo de información, entidad o " \
                         "elemento, y solo puede estar asignada a uno."
                 raise UserError(texto)
