@@ -34,7 +34,7 @@ class DataElement(models.Model):
             self.env.cr.execute(query)
             resultado = self.env.cr.fetchall()
             regla = self.env['datagov.data.quality.rule'].browse(i)
-            if len(resultado) > 0 and regla.informationAsset.name != self.name:  # no incluye el actual si se borra
+            if len(resultado) > 0 and regla.dataElement.name != self.name:  # no incluye el actual si se borra
                 texto = "La regla de calidad de datos ya está asignada a otro activo de información, entidad o " \
                         "elemento, y solo puede estar asignada a uno."
                 raise UserError(texto)
