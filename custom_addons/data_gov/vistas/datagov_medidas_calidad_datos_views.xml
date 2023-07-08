@@ -66,7 +66,7 @@
         <field name="arch" type="xml">
             <tree string="Indicadores de calidad de datos (KPIs)">
                 <field name="name"/>
-                <field name="description" optional="hide"/>
+                <field name="description"/>
                 <field name="category" optional="hide"/> <!-- siempre el mismo -->
                 <field name="owner"/>
                 <field name="objective" optional="hide"/>
