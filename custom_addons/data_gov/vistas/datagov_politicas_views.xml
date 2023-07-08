@@ -34,11 +34,14 @@
                         <page string="Procedimientos">
                             <field name="procedure"/>
                         </page>
-                        <page string="Métricas">
-                            <field name="metric"/>
-                        </page>
                         <page string="Estándares">
                             <field name="standard"/>
+                        </page>
+                        <page string="KPIs asociados a la política">
+                            <field name="metric"/>
+                        </page>
+                        <page string="KPIs de calidad de datos asociados a la política">
+                            <field name="dataQualityMetric"/>
                         </page>
                     </notebook>
                 </sheet>
@@ -64,6 +67,7 @@
                 <field name="procedure" widget="many2many_tags"/>
                 <field name="standard" widget="many2many_tags"/>
                 <field name="metric" widget="many2many_tags"/>
+                <field name="dataQualityMetric" widget="many2many_tags"/>
             </tree>
         </field>
     </record>
@@ -87,6 +91,7 @@
                 <field name="procedure" optional="hide"/>
                 <field name="standard" optional="hide"/>
                 <field name="metric" optional="hide"/>
+                <field name="dataQualityMetric" optional="hide"/>
                 <!-- para que en el botón de agrupar te ponga si quieres por categoría -->
                 <group expand="1" string="Group By">
                     <filter string="Categoría" name='category' context="{'group_by':'category'}"/>
@@ -95,6 +100,8 @@
                     <filter string="Procedimiento" name='procedure' context="{'group_by':'procedure'}"/>
                     <filter string="Estándar" name='standard' context="{'group_by':'standard'}"/>
                     <filter string="Métrica" name='metric' context="{'group_by':'metric'}"/>
+                    <filter string="Métrica de calidad de datos" name='dataQualityMetric'
+                            context="{'group_by':'dataQualityMetric'}"/>
                 </group>
             </search>
         </field>

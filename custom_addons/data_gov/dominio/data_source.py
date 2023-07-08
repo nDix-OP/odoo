@@ -30,8 +30,8 @@ class DataSource(models.Model):
     ],
         string="Clase", required=True)  # en la vista no se puede modificar después
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)
-    logical_model = fields.Text('Modelo lógico', required=True)
-    physical_model = fields.Text('Modelo físico', required=True)
+    logical_model = fields.Text('Modelo lógico')
+    physical_model = fields.Text('Modelo físico')
     data_type = fields.Selection(selection=[  # lista valor - etiqueta
         (DataType.STRUCTURED.name, DataType.STRUCTURED.value),
         (DataType.SEMISTRUCTURED.name, DataType.SEMISTRUCTURED.value),
