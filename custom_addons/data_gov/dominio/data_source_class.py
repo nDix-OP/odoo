@@ -7,6 +7,7 @@ class DataSourceClass(Enum):
     API = 'API'
     SERVICIO_STREAMING = 'Servicio de streaming'
     SISTEMA_TRANSFERENCIA_FICHEROS = 'Sistema de transferencia de ficheros'
+    NOT_A_DIGITAL_SOURCE = 'Fuente no digital'
 
     # Other ver si se pasa como str o CategoryType, así funciona en ambos casos
     # Redefinir en cada Enum

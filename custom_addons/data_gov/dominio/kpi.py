@@ -41,11 +41,15 @@ class Kpi(models.Model):
     @api.onchange('category')
     def on_change_category(self):
         # comparar con el __eq__, si se pone vacío no salta pero después no deja guardar
-        if self.category.type != CategoryType.KPI and self.category.name is not False\
-                or self.category.name == 'Medida de calidad de datos':
+        if self.category.type != CategoryType.KPI and self.category.name is not False:
             self.category = False  # dejar el valor anterior
-            # lanzar notificación
-            texto = "La categoría del KPI debe ser una del tipo 'KPI',y tampoco la medida de calidad de datos ."
+            # mensaje distinto dependiendo de lo que se quiera hacer
+            if self.category.name == 'Medida de calidad de datos':
+                texto = "Si desea convertir un KPI en uno de calidad de datos, debe borrar este y crear uno nuevo " \
+                        'desde la vista "Indicadores de calidad de datos (KPIs)"'
+            else:
+                # lanzar notificación
+                texto = "La categoría del KPI debe ser una del tipo 'KPI',y tampoco la medida de calidad de datos ."
             raise UserError(texto)
         return
 

@@ -27,21 +27,23 @@ class DataSource(models.Model):
         (DataSourceClass.SISTEMA_FICHEROS.name, DataSourceClass.SISTEMA_FICHEROS.value),
         (DataSourceClass.SISTEMA_TRANSFERENCIA_FICHEROS.name, DataSourceClass.SISTEMA_TRANSFERENCIA_FICHEROS.value),
         (DataSourceClass.API.name, DataSourceClass.API.value),
+        (DataSourceClass.NOT_A_DIGITAL_SOURCE.name, DataSourceClass.NOT_A_DIGITAL_SOURCE.value),
     ],
         string="Clase", required=True)  # en la vista no se puede modificar después
     owner = fields.Many2one('datagov.actor', 'Propietario', required=True)
-    logical_model = fields.Text('Modelo lógico', required=True)
-    physical_model = fields.Text('Modelo físico', required=True)
+    logical_model = fields.Text('Modelo lógico')
+    physical_model = fields.Text('Modelo físico')
     data_type = fields.Selection(selection=[  # lista valor - etiqueta
         (DataType.STRUCTURED.name, DataType.STRUCTURED.value),
         (DataType.SEMISTRUCTURED.name, DataType.SEMISTRUCTURED.value),
         (DataType.UNSTRUCTURED.name, DataType.UNSTRUCTURED.value),
+        (DataType.UNDEFINED.name, DataType.UNDEFINED.value),
     ],
         string="Tipo de datos", required=True)  # en la vista no se puede modificar después
     status = fields.Selection(selection=[  # lista valor - etiqueta
-        (DataSourceStatus.ACTIVE.name, DataSourceStatus.ACTIVE.value),
-        (DataSourceStatus.PAUSED.name, DataSourceStatus.PAUSED.value),
-        (DataSourceStatus.INACTIVE.name, DataSourceStatus.INACTIVE.value),
+        (DataSourceStatus.ACTIVE.name, 'Activa'),
+        (DataSourceStatus.PAUSED.name, 'Pausada'),
+        (DataSourceStatus.INACTIVE.name, 'Inactiva'),
     ],
         string="Estado", required=True)
     statusDate = fields.Date('Fecha de estado', required=True,
